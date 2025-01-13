@@ -1,0 +1,350 @@
+/* 언어설정 */
+@charset "utf-8";
+
+/* 기본설정 */
+* {margin: 0; padding: 0;}
+ul,ol {list-style: none;}
+a {text-decoration: none;
+    color: #000;}
+img {border: none;
+    vertical-align: bottom}
+
+/* 레이아웃 설정 */
+
+#wrap {
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    height: 150px;
+    background-color: mediumaquamarine;
+}
+
+.hero {
+    width: 100%;
+    height: 500px;
+    background-color: mediumblue;
+}
+
+.program {
+    width: 100%;
+    height: 600px;
+    background-color: mediumorchid;
+}
+
+.photoG {
+    width: 100%;
+    height: 600px;
+    background-color: mediumpurple;
+}
+
+.intro {
+    width: 100%;
+    height: 940px;
+    background-color: mediumseagreen;
+    position: relative;
+}
+
+.floor {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(228, 38, 48);
+    display: none;
+}
+
+.floor2 {
+    width: 490px;
+    height: 400px;
+    background-color: lightblue;
+    position: absolute;
+    right:50px;
+    bottom: 50px;
+}
+
+.animalInfo {
+    width: 100%;
+    height: 1200px;
+    background-color: mediumslateblue;
+    position: relative;
+}
+
+.animal {
+    width: 100%;
+    height: 700px;
+    background-color: rgb(184, 38, 38);
+    display: none;
+}
+
+.animal2 {
+    width: 600px;
+    height: 700px;
+    background-color: lime;
+    position: absolute;
+    left: 60px;
+    bottom: 50px;
+}
+
+.event {
+    width: 50%;
+    height: 560px;
+    background-color: rosybrown;
+}
+
+.boder {
+    width: 50%;
+    height: 560px;
+    background-color: darkseagreen;
+}
+
+.sns {
+    width: 100%;
+    height: 640%;
+    background-color: darksalmon;
+}
+
+.clock {
+    width: 100%;
+    height: 230px;
+    background-color: darkkhaki;
+}
+
+.reservation {
+    width: 45%;
+    height: 730px;
+    background-color: darkorange;
+}
+
+.map {
+    width: 55%;
+    height: 730px;
+    background-color: hotpink;
+}
+
+
+/* 미디어 쿼리 ################################################# */
+
+/* 태블릭 834px이하 */
+@media (max-width:834px) and (min-width:403px)
+
+{
+    #wrap {
+        width: 90%;
+    }
+
+    .header {
+        width: 100%;
+        height: 90px;
+    }
+
+    .hero {
+        width: 100%;
+        height: 290px;
+    }
+
+    .program {
+        width: 100%;
+        height: 350px;
+    }
+
+    .photoG {
+        width: 100%;
+        height: 350px;
+    }
+
+    .intro {
+        width: 100%;
+        height: 545px;
+    }
+
+    .floor {
+        width: 100%;
+        height: 290px;
+        display: block;
+
+    }
+
+    .floor2 {
+        width: 100%;
+        height: 290px;
+        display: none;
+
+    }
+
+    .animalInfo {
+        width: 100%;
+        height: 700px;
+        position: relative;
+    }
+
+    .animal {
+        width: 100%;
+        height: 400px;
+        display: none;
+    }
+
+    .animal2 {
+        width: 700px;
+        height: 400px;
+        background-color: rgb(156, 228, 22);
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+    }
+
+    .event {
+        width: 50%;
+        height: 320px;
+    }
+
+    .boder {
+        width: 50%;
+        height: 320px;
+    }
+
+    .sns {
+        width: 100%;
+        height: 370px;
+    }
+
+    .clock {
+        width: 100%;
+        height: 130px;
+    }
+
+    .reservation {
+        width: 45%;
+        height: 425px;
+    }
+
+    .map {
+        width: 55%;
+        height: 425px;
+    }
+
+}
+
+/* 모바일 402px 이하 */
+@media (max-width:402px)
+
+{
+    #wrap {
+        width: 100%
+    }
+
+    .header {
+        width: 100%;
+        height: 70px;
+        ;
+        order: 1;
+    }
+
+    .intro {
+        width: 100%;
+        height: 230px;
+
+        order: 2;
+    }
+
+    .program {
+        width: 100%;
+        height: 180px;
+
+        order: 3;
+    }
+
+    .photoG {
+        width: 100%;
+        height: 160px;
+
+        order: 4;
+    }
+
+
+    .hero {
+        width: 100%;
+        height: 500px;
+        display: none;
+    }
+
+
+    .animalInfo {
+        width: 100%;
+        height: 160px;
+
+        order: 5;
+    }
+
+    .animal {
+        width: 100%;
+        height: 290px;
+        order: 6;
+        display: block;
+    }
+
+    .animal2 {
+        width: 100%;
+        height: 290px;
+        display: none;
+    }
+
+    .floor2 {
+        width: 100%;
+        height: 140px;
+        display: none;
+    }
+
+    .floor {
+        width: 100%;
+        height: 290px;
+        display: block;
+        order: 7;
+
+    }
+
+    .event {
+        width: 100%;
+        height: 180px;
+
+        order: 8;
+    }
+
+    .boder {
+        width: 1000%;
+        height: 170px;
+
+        order: 9;
+    }
+
+    .sns {
+        width: 100%;
+        height: 180px;
+
+        order: 10;
+    }
+
+    .clock {
+        width: 100%;
+        height: 120px;
+
+        order: 11;
+    }
+
+    .reservation {
+        width: 100%;
+        height: 200px;
+
+        order: 12;
+    }
+
+    .map {
+        width: 100%;
+        height: 200px;
+
+        order: 13;
+    }
+
+}
