@@ -18,17 +18,16 @@ img {border: none;
     margin: 0 auto;
 }
 
+/* 헤더 */
+
 .header {
     width: 100%;
-    height: 150px;
+    height: 620px;
     background-color: mediumaquamarine;
 }
 
-.hero {
-    width: 100%;
-    height: 500px;
-    background-color: mediumblue;
-}
+
+/* 프로그램 */
 
 .program {
     width: 100%;
@@ -36,11 +35,17 @@ img {border: none;
     background-color: mediumorchid;
 }
 
+/* 포토갤러리 */
+
+
 .photoG {
     width: 100%;
     height: 600px;
     background-color: mediumpurple;
 }
+
+
+/* 업체소개 + 층별안내  */
 
 .intro {
     width: 100%;
@@ -57,36 +62,30 @@ img {border: none;
 }
 
 .floor2 {
-    width: 490px;
-    height: 400px;
+    width: 50%;
+    height: 200px;
     background-color: lightblue;
     position: absolute;
     right:50px;
     bottom: 50px;
 }
 
+/* 동물현황 + 동물소개 */
+
 .animalInfo {
     width: 100%;
     height: 1200px;
-    background-color: mediumslateblue;
-    position: relative;
-}
+    background-color: mediumslateblue;}
+
 
 .animal {
     width: 100%;
     height: 700px;
-    background-color: rgb(184, 38, 38);
-    display: none;
-}
+    background-color: rgb(184, 38, 38);}
 
-.animal2 {
-    width: 600px;
-    height: 700px;
-    background-color: lime;
-    position: absolute;
-    left: 60px;
-    bottom: 50px;
-}
+
+
+/* 이벤트 */
 
 .event {
     width: 50%;
@@ -94,35 +93,69 @@ img {border: none;
     background-color: rosybrown;
 }
 
-.boder {
-    width: 50%;
+/* 공지사항 / 자주묻는 질문 */
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+.boder {width: 50%;
     height: 560px;
     background-color: darkseagreen;
-}
+    display: flex;
+    flex-direction: column;}
 
-.sns {
-    width: 100%;
-    height: 640%;
-    background-color: darksalmon;
-}
+.boder .b_1{width: 100%;
+    height: 10%;
+background-color: azure;}
 
-.clock {
-    width: 100%;
+.boder .b_1 ul{display: flex;}
+.boder .b_1 a{display: block; padding: 10px 20px;
+    margin-right: 30px;
+    font-size: 18px;
+background-color: darkgreen;}
+
+.boder .b_2{width: 100%;
+    height: 90%;
+    background-color: antiquewhite;}
+
+
+
+/* .boder {
+    width: 50%;
+    height: 560px;
+    background-color: darkseagreen;}
+
+.boder ul{width: 100%; height: 100%;
+    display: flex;}
+
+.boder ul li{padding-right: 30px;}
+
+.boder ul li a{width: 10%;
+    background-color: salmon;} */
+
+
+
+
+    /* sns */
+.sns {width: 100%;
+    height: 640px;
+    background-color: darksalmon;}
+
+/*  이용시간안내 */
+.clock {width: 100%;
     height: 230px;
-    background-color: darkkhaki;
-}
+    background-color: darkkhaki;}
 
-.reservation {
-    width: 45%;
-    height: 730px;
-    background-color: darkorange;
-}
 
-.map {
-    width: 55%;
+/* 예약 */
+.reservation {width: 45%;
     height: 730px;
-    background-color: hotpink;
-}
+    background-color: darkorange;}
+
+
+/* 오시는 길 */
+.map {width: 55%;
+    height: 730px;
+    background-color: hotpink;}
 
 
 /* 미디어 쿼리 ################################################# */
@@ -131,99 +164,51 @@ img {border: none;
 @media (max-width:834px) and (min-width:403px)
 
 {
-    #wrap {
-        width: 90%;
-    }
+    #wrap {width: 90%;}
 
-    .header {
-        width: 100%;
-        height: 90px;
-    }
+    .header {width: 100%;
+        height: 410px;}
 
-    .hero {
-        width: 100%;
+
+    .program {width: 100%;
+        height: 350px;}
+
+    .photoG {width: 100%;
+        height: 350px;}
+
+    .intro {width: 100%;
+        height: 545px;}
+
+    .floor {width: 100%;
+        height: 290px;}
+
+    .floor2 {width: 100%;
         height: 290px;
-    }
+        display: none;}
 
-    .program {
-        width: 100%;
-        height: 350px;
-    }
+    .animalInfo {width: 100%;
+        height: 700px;}
 
-    .photoG {
-        width: 100%;
-        height: 350px;
-    }
+    .animal {width: 100%;
+        height: 400px;}
 
-    .intro {
-        width: 100%;
-        height: 545px;
-    }
+    .event {width: 50%;
+        height: 320px;}
 
-    .floor {
-        width: 100%;
-        height: 290px;
-        display: block;
+    .boder {width: 50%;
+        height: 320px;}
 
-    }
+    .sns {width: 100%;
+        height: 370px;}
 
-    .floor2 {
-        width: 100%;
-        height: 290px;
-        display: none;
+    .clock {width: 100%;
+        height: 130px;}
 
-    }
+    .reservation {width: 45%;
+        height: 425px;}
 
-    .animalInfo {
-        width: 100%;
-        height: 700px;
-        position: relative;
-    }
-
-    .animal {
-        width: 100%;
-        height: 400px;
-        display: none;
-    }
-
-    .animal2 {
-        width: 700px;
-        height: 400px;
-        background-color: rgb(156, 228, 22);
-        position: absolute;
-        left: 30px;
-        bottom: 30px;
-    }
-
-    .event {
-        width: 50%;
-        height: 320px;
-    }
-
-    .boder {
-        width: 50%;
-        height: 320px;
-    }
-
-    .sns {
-        width: 100%;
-        height: 370px;
-    }
-
-    .clock {
-        width: 100%;
-        height: 130px;
-    }
-
-    .reservation {
-        width: 45%;
-        height: 425px;
-    }
-
-    .map {
-        width: 55%;
-        height: 425px;
-    }
+    .map {width: 55%;
+        height: 425px;}
 
 }
 
@@ -231,120 +216,64 @@ img {border: none;
 @media (max-width:402px)
 
 {
-    #wrap {
-        width: 100%
-    }
+    #wrap {width: 100%}
 
-    .header {
-        width: 100%;
-        height: 70px;
-        ;
-        order: 1;
-    }
+    .header {width: 100%;
+        height: 570px;
+        order: 1;}
 
-    .intro {
-        width: 100%;
+    .intro {width: 100%;
         height: 230px;
+        order: 2;}
 
-        order: 2;
-    }
-
-    .program {
-        width: 100%;
+    .program {width: 100%;
         height: 180px;
+        order: 3;}
 
-        order: 3;
-    }
-
-    .photoG {
-        width: 100%;
+    .photoG {width: 100%;
         height: 160px;
+        order: 4;}
 
-        order: 4;
-    }
-
-
-    .hero {
-        width: 100%;
-        height: 500px;
-        display: none;
-    }
-
-
-    .animalInfo {
-        width: 100%;
+    .animalInfo {width: 100%;
         height: 160px;
+        order: 5;}
 
-        order: 5;
-    }
-
-    .animal {
-        width: 100%;
+    .animal {width: 100%;
         height: 290px;
-        order: 6;
-        display: block;
-    }
+        order: 6;}
 
-    .animal2 {
-        width: 100%;
-        height: 290px;
-        display: none;
-    }
-
-    .floor2 {
-        width: 100%;
-        height: 140px;
-        display: none;
-    }
-
-    .floor {
-        width: 100%;
+    .floor {width: 100%;
         height: 290px;
         display: block;
-        order: 7;
+        order: 7;}
 
-    }
-
-    .event {
-        width: 100%;
+    .event {width: 100%;
         height: 180px;
+        order: 8;}
 
-        order: 8;
-    }
-
-    .boder {
-        width: 1000%;
+    .boder {width: 1000%;
         height: 170px;
+        order: 9;}
 
-        order: 9;
-    }
-
-    .sns {
-        width: 100%;
+    .sns {width: 100%;
         height: 180px;
+        order: 10;}
 
-        order: 10;
-    }
-
-    .clock {
-        width: 100%;
+    .clock {width: 100%;
         height: 120px;
+        order: 11;}
 
-        order: 11;
-    }
-
-    .reservation {
-        width: 100%;
+    .reservation {width: 100%;
         height: 200px;
+        order: 12;}
 
-        order: 12;
-    }
-
-    .map {
-        width: 100%;
+    .map {width: 100%;
         height: 200px;
+        order: 13;}
 
-        order: 13;
-    }
+        /* 모바일 제외 */
 
+    .floor2 {width: 100%;
+        height: 140px;
+        display: none;}
 }
