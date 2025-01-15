@@ -91,16 +91,76 @@ flex-direction: column;}
 .group .photoG{width: 100%;
 height: 920px;
 background-color: darkblue;}
-.group .photoG ul{display: flex;
-justify-content: center;}
+.group .photoG ul{height: 100%;
+    display: flex;
+justify-content: center;
+align-items: center;}
+
+/* 동물 현황 */
+.group .animalInfo {width: 100%; height: 1190px;
+    background-image: url(img/star_bg.png);
+    background-size: cover;
+background-repeat: no-repeat;}
+.group .animalInfo .title{
+    width: 100%;    
+    display: flex;}
+.group .animalInfo .title div{width: 33.3333%;}
+
+.group .animalInfo .gragh{width: 100%;
+    display: flex;
+    justify-content: center;}
+.group .animalInfo .gragh img{max-width: 100%;}
+.group .animalInfo p{text-align: center; margin-top: 50px;}
+.group .animalInfo p:nth-child(2){margin-top: 30px;}
+
+/* 동물 소개 */
+.group .animal {width: 100%; height: 1086px;
+background-color: darkslateblue;}
+.group .animal .title{
+    width: 100%;    
+    display: flex;
+    align-items: center;}
+.group .animal .title div{background-color: burlywood;}
+.group .animal .title div:nth-child(1){width: 60%; height: 1px;}
+.group .animal .title div:nth-child(2){width: 15%;}
+.group .animal .title div:nth-child(3){width: 25%; height: 1px;}
+
+.group .animal .list {margin-top: 100px;}
+.group .animal .list ul{display: flex;
+flex-direction: column;
+align-items: center;}
+.group .animal .list ul li img{width: 760px; height: 260px;
+max-width: 100%;}
+.group .animal .list ul li{height: 330px;
+border-bottom: 1px solid #fff;}
+.group .animal .list p{text-align: center;
+margin-top: 50px;}
 
 
-
-
+/* 이벤트/공지사항/문답 */
 
 .eventBox{width: 100%;
 height: 690px;
-background-color: darkseagreen;}
+background-color: darkseagreen;
+display: flex;}
+.eventBox .event{width: 50%;
+background-color: darkslategrey;
+display: flex;
+flex-direction: column;}
+.eventBox .event .list {width: 100%;
+background-color: aliceblue;}
+.eventBox .event .list ul{
+    display: flex;
+justify-content: center;}
+
+
+.eventBox .borad{width: 50%;
+background-color: khaki;}
+
+
+
+
+
 
 .sns{width: 100%;
 height: 770px;
