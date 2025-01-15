@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,61 +8,214 @@
     <title>대전아쿠아리움 리뉴얼 프로젝트</title>
 
     <!-- 외부 스타일 시트 연결 -->
-    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="style_index1.css">
 </head>
+
 <body>
 
     <div id="wrap">
-        <header class="header">헤더</header>
-        <section class="program">프로그램
-            <div>체험하세요 어쩌구</div>
-            <div>
+        <header class="header">
+            <!-- height를 100vh로 설정 -->
+            <nav class="navi">
                 <ul>
-                    <li><div>img1</div></li>
-                    <li><div>img2</div></li>
-                    <li><div>img3누르면 커짐</div></li>
+                    <li><a href="">대전아쿠아리움</a></li>
+                    <li><a href="">프로그램</a></li>
+                    <li><a href="">야생동물현황</a></li>
+                    <li><a href="">동물이야기</a></li>
+                    <li><a href="">이벤트</a></li>
+                    <li><a href="">이용안내</a></li>
+                    <li><a href="">예약</a></li>
+                </ul>
+            </nav>
+            <div class="icon">슬라이더 가운데로 어캐오죠?</div>
+        </header>
+        <section class="program">
+            <div class="titleBox">체험하세요 어쩌구</div>
+            <div class="listBox">
+                <ul>
+                    <!--flex로 설정하고 33.3333%로 설정을 해놓고 -->
+                    <li>
+                        <!-- li에는 overflow:hidden 설정을 위해 height값 설정필수px 또는 vh  -->
+                        <!-- img는 height는 100% width:auto로 -->
+                        <img src="" alt="">
+                        <!--.text는 li를 기준으로 position   -->
+                        <div class="text">text</div>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+
+                        <div class="text">text</div>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+
+                        <div class="text">text</div>
+                    </li>
                 </ul>
             </div>
         </section>
-        <section class="photoG">포토갤러리</section>
 
-        <section class="intro">업체소개
-            <div class="floor2">층별안내2</div>
+
+        <section class="intro">
+            <div class="intro_inner">
+                <div class="info">
+                    <h2> 대전아쿠아리움은...</h2>
+                    <p class="p1">전쟁에 대비해 지하방공호로 활용됐던
+                        ​대전 도심의 천연동굴을 변화시킨 수족관으로,</p>
+                    <p class="p2">​국내 최초, 최대인 담수어 아쿠아리움 입니다.</p>
+                    <p class="p3">​다른 나라의 다양한 담수어류를 국가별로 만나 볼 수 있고,
+                        ​테마별로 재미있게 꾸며진 어류들을 볼 수 있습니다.</p>
+
+                </div>
+
+                <div class="floor">
+                    <ul>
+                        <li>1F
+                            <em>한국관</em>
+                        </li>
+                        <li>2F
+                            <em>한국관</em>
+                        </li>
+                        <li>3F
+                            <em>한국관</em>
+                        </li>
+                        <li>실외
+                            <em>나무길테크로드</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
-
-        <section class="floor">층별안내</section>
+      <div class="group">
+        <!-- 그라디언트 배경화면 -->
+            <section class="photoG">
+                <ul>
+                    <li>포토1</li>
+                    <li>포토2</li>
+                    <li>포토3</li>
+                    <li>포토4</li>
+                    <li>포토5</li>
+                    <li>포토6</li>
+                    <li>포토7</li>
+                    <li>포토8</li>
+                </ul>
+            </section>   
+            <section class="animalInfo">
+                <!-- 백그라운드설정으로 png로 별설정하기  -->
+                <div class="title">
+                    <div>선</div>
+                    <div>내용</div>
+                    <div>선</div>
+                </div>
     
-        <section class="animalInfo">동물현황</section>
-        <section class="animal">동물소개</section>
+                <div class="gragh"></div>
+                <div>
+                    <p>별이 되어가는...</p>
+                    <p></p>
+                </div>
+    
+            </section>
            
-        <section class="event">이벤트</section>
-        <section class="boder">
-            <div class="b_1">
-                <ul>
-                    <li><a href="">공지사항</a></li>
-                    <li><a href="">자주묻는 질문</a></li>
-                </ul>
-            </div>
-            <div class="b_2">
-                <ul>
-                    <li>게시글1</li>
-                    <li>게시글2</li>
-                    <li>게시글3</li>
-                </ul>
-            </div>
-        
-            <!-- <section class="boder">게시판 탭2
-                <ul>
-                    <li><a href="">공지사항</a></li>
-                    <li><a href="">질문</a></li>
-                </ul> -->
-        
-        </section>
-        <section class="sns">에센에스</section>
-        <section class="clock">이용시간안내</section>
-        <section class="reservation">예약</section>
-        <section class="map">길</section>
-    </div>
     
+         
+            <section class="animal">
+                <div class="title">
+                    <div>선</div>
+                    <div>내용</div>
+                    <div>선</div>
+                </div>
+
+                <div class="list">
+                    <ul>
+                        <li><a href="">
+                            <div class="text">
+
+                            </div>
+                            <img src="" alt="">
+                        </a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                    <p><a href="">더 많은 동물들 보러가기  <i></i></a></p>
+                </div>
+            </section>
+      </div>
+
+       <div class="eventBox">
+            <section class="event">
+                <div class="title">
+                    <h2>event</h2>
+                    <div><i></i></div>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="borad">
+                <div class="title">
+                    <ul>
+                        <li>공지사항</li>
+                        <li>FAQs</li>
+                    </ul>
+                    <div><i></i></div>
+                </div>
+                <div class="conBox">
+                    <div class="notice">
+                        <ul>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="faq"></div>
+                </div>
+    
+             
+            </section>
+       </div>
+        <section class="sns">
+            <div class="title">
+                
+               <h2></h2>
+                <ul>
+                    <li><a href="">네이버</a></li>
+                    <li><a href="">인스타그램</a></li>
+                </ul>
+            </div>
+            <div class="list">
+                <ul>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+
+        </section>
+        <section class="clock">
+            <div></div>
+        </section>
+        <div class="mapBox">
+            <div class="map"></div>
+            <!-- resetvation이 position으로 mapBox를 기준으로 위에 올림 -->
+            <section class="reservation">
+                <form action="">
+                    
+                </form>
+            </section>
+        </div>
+       
+    </div>
+
 </body>
+
 </html>

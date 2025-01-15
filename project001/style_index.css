@@ -51,24 +51,12 @@ img {border: none;
     width: 100%;
     height: 940px;
     background-color: mediumseagreen;
-    position: relative;
 }
 
-.floor {
-    width: 100%;
+.intro .floor {width: 100%;
     height: 400px;
-    background-color: rgb(228, 38, 48);
-    display: none;
-}
+    background-color: rgb(228, 38, 48);}
 
-.floor2 {
-    width: 50%;
-    height: 200px;
-    background-color: lightblue;
-    position: absolute;
-    right:50px;
-    bottom: 50px;
-}
 
 /* 동물현황 + 동물소개 */
 
@@ -179,12 +167,8 @@ background-color: darkgreen;}
     .intro {width: 100%;
         height: 545px;}
 
-    .floor {width: 100%;
+    .intro .floor {width: 100%;
         height: 290px;}
-
-    .floor2 {width: 100%;
-        height: 290px;
-        display: none;}
 
     .animalInfo {width: 100%;
         height: 700px;}
@@ -242,9 +226,8 @@ background-color: darkgreen;}
         height: 290px;
         order: 6;}
 
-    .floor {width: 100%;
+    .intro .floor {width: 100%;
         height: 290px;
-        display: block;
         order: 7;}
 
     .event {width: 100%;
@@ -270,10 +253,4 @@ background-color: darkgreen;}
     .map {width: 100%;
         height: 200px;
         order: 13;}
-
-        /* 모바일 제외 */
-
-    .floor2 {width: 100%;
-        height: 140px;
-        display: none;}
 }
