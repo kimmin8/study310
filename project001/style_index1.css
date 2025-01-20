@@ -13,13 +13,15 @@ img {border: none;
 
 #wrap {display: flex;
     flex-flow: row wrap;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;}
 
 /* 헤더 */
 .header {width: 100%;
     height: 100vh;
-    background-color: cadetblue;}
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;}
 .header .navi ul{width: 100%;
     display: flex;
     justify-content: flex-end;}
@@ -27,8 +29,10 @@ img {border: none;
 .header .navi ul li a{display: block; padding: 5px 15px;
     margin:5px auto;
     background-color: lightblue;}
+
+        /* ######################################################### */
 .header .icon {width: 100%;
-}
+text-align: center;}
 
 
 /* 체험프로그램 */
@@ -64,18 +68,52 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;}
+
 .intro .intro_inner .info{
     width: 1000px; height: 570px;
     background-color: rgba(255, 255, 255, 0.3);
-    text-align: center;}
+    display: flex;
+    align-items: center;
+    flex-direction: column;}
 .intro .intro_inner .info h2{font-size: 75px;
-color: darkblue;
-margin: 50px auto;}
-.intro .intro_inner .info .p2{font-size: 30px;
-margin: 20px;}
+    color: darkblue;
+    margin-top: 60px;}
+.intro .intro_inner .info .p1{font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;}
+.intro .intro_inner .info .p2{font-size: 40px;
+    text-align: center;
+    color: #093888;}
+.intro .intro_inner .info .p3{font-size: 30px;
+    margin-top: 20px;
+    text-align: center;}
 
-.info .intro_inner .floor ul{display: flex;}
-.info .intro_inner .floor ul li{}
+
+.intro_inner .floor{}
+.intro_inner .floor ul{display: flex;}
+.intro_inner .floor ul li{
+    display: inline-block;
+    background-color: burlywood;
+    text-align: center;
+}
+.intro_inner .floor ul li p{font-size: 50px;}
+.intro_inner .floor ul li em{font-size: 20px;
+                            font-style: normal;}
+
+
+    /* ######################################################### */
+
+.floor .f_bg{display: flex;
+flex-direction: column;
+position: relative;}
+.floor .f_bg .f_text{position: absolute;
+top: 10%;
+left: 15%;}
+
+.floor .f_bg .f1 {font-size: 40px;}
+.floor .f_bg .f1 em{font-size: 30px;
+                    font-style: normal;}
 
 
 /* 포토갤러리 ~ 동물 소개 */
@@ -96,6 +134,10 @@ background-color: darkblue;}
 justify-content: center;
 align-items: center;}
 
+.group .photoG ul li{margin: 40px;}
+.group .photoG ul li:nth-child(odd){margin-top: 120px;}
+
+
 /* 동물 현황 */
 .group .animalInfo {width: 100%; height: 1190px;
     background-image: url(img/star_bg.png);
@@ -113,6 +155,15 @@ background-repeat: no-repeat;}
 .group .animalInfo p{text-align: center; margin-top: 50px;}
 .group .animalInfo p:nth-child(2){margin-top: 30px;}
 
+.animalInfo .title{
+    width: 100%;    
+    display: flex;
+    align-items: center;}
+.animalInfo .title div{background-color: #fff;}
+.animalInfo .title div:nth-child(1){width: 35%; height: 1px;}
+.animalInfo .title div:nth-child(2){width: 30%;}
+.animalInfo .title div:nth-child(3){width: 35%; height: 1px;}
+
 /* 동물 소개 */
 .group .animal {width: 100%; height: 1086px;
 background-color: darkslateblue;}
@@ -120,7 +171,7 @@ background-color: darkslateblue;}
     width: 100%;    
     display: flex;
     align-items: center;}
-.group .animal .title div{background-color: burlywood;}
+.group .animal .title div{background-color: #fff;}
 .group .animal .title div:nth-child(1){width: 60%; height: 1px;}
 .group .animal .title div:nth-child(2){width: 15%;}
 .group .animal .title div:nth-child(3){width: 25%; height: 1px;}
@@ -135,6 +186,21 @@ max-width: 100%;}
 border-bottom: 1px solid #fff;}
 .group .animal .list p{text-align: center;
 margin-top: 50px;}
+
+    /* ######################################################### */
+.animal .list .list01{width: 1190px;
+    display: flex;}
+.animal .list .list01 img{width: 50%;}
+.animal .list .list01 .text{width: 50%;
+display: flex;
+flex-direction: column;}
+.list01 .text p:nth-child(1){width: 25%;}
+.list01 .text p:nth-child(2){width: 75%;
+    text-align: end;}
+
+.list01 .text p:nth-child(3){width: 100%;
+text-align: left;}
+
 
 
 /* 이벤트/공지사항/문답 */
@@ -233,21 +299,102 @@ position: relative;}
     position: absolute;}
 
 .reservation {width: 620px; height: 1150px;
-background-color: rgba(0, 0, 150, 0.2);
-border: 1px solid transparent;
-border-radius: 50px 50px 0 0;
-box-sizing: border-box;
-display: flex;
-flex-direction: column;
-align-items: center;}
+    background-color: rgba(0, 0, 150, 0.2);
+    border: 1px solid transparent;
+    border-radius: 50px 50px 0 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
 .reservation .cal {width: 500px; height: 440px;
-background-color: #fff;}
+    background-color: #fff;
+margin-top: 80px;}
+
+.reservation .text{
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
 .reservation .menu {width: 500px;
+    display: flex;
+    flex-direction: column;}
+.reservation .menu p{width: 500px; height: 40px;
+    background-color: #DDD;}
+.reservation .menu .menu_C p{width: 500px; height: 40px;
+    background-color: #ccc;}
+
+.reservation .opt div{width: 500px; height: 40px;
+    background-color: #DDD;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;}
+
+.reservation .reser{width: 500px; height: 150px;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    /* #########################################################
+    
+    크기? 뭘 여쭤보려햇지요*/
+.reservation .reser .reser01{width: 100%;
+    background-color: gold;}
+.reservation .reser .reser01 ul{display: flex;
+    align-items: center;
+    justify-content: space-between;}
+.reservation .reser .reser01 li:nth-child(1){width: 48%;
+    text-align:start;
+margin-left: 5px;}
+.reservation .reser .reser01 li:nth-child(2)
+{ width: 4%; background-color: skyblue;
+    display: block;
+padding: 3px 10px;
+text-align: center;}
+.reservation .reser .reser01 li:nth-child(3){width: 48%;
+text-align: end;
+margin-right: 5px;}
+
+.reservation .reser .reser02{width: 100%;
+    background-color: rgb(98, 206, 113);}
+.reservation .reser .reser02 ul{display: flex;
+    align-items: center;
+    justify-content: space-between;}
+.reservation .reser .reser02 li:nth-child(1){width: 48%;
+        text-align:start;
+    margin-left: 5px;}
+.reservation .reser .reser02 li:nth-child(2)
+    { width: 4%; background-color: skyblue;
+        display: block;
+    padding: 3px 10px;
+    text-align: center;}
+.reservation .reser .reser02 li:nth-child(3){width: 48%;
+    text-align: end;
+    margin-right: 5px;}
+
+.reservation .reser .reser03{width: 100%;
+text-align: end;
+margin-right: 5px;}
+
+.reservation .btn{width: 500px; height: 50px;
+margin-top: 20px;
 display: flex;
-flex-direction: column;}
-.reservation .menu p{color: #4880ED;}
-.reservation .menu .menuC{width: 100%; height: 40px;
-background-color: aliceblue;}
+justify-content: flex-end;}
+.reservation .btn a{
+display: inline-block;
+padding: 5px 30px;
+text-align: center;
+border: 2px solid #fff;
+border-radius: 5px;
+color: #fff;}
+
+
+
+
+
 
 /* 미디어 쿼리 ################################################# */
 

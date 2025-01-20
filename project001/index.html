@@ -30,7 +30,8 @@
                     <li><a href="">예약</a></li>
                 </ul>
             </nav>
-            <div class="icon">슬라이더 가운데로 어캐오죠?</div>
+            <div class="icon">슬라이더</div>
+                <!-- ##################### 슬라이더를 아래로 내리고 싶다 ###################### -->
         </header>
         <section class="program">
             <div class="titleBox">체험하세요 어쩌구</div>
@@ -59,33 +60,60 @@
             </div>
         </section>
 
-
         <section class="intro">
             <div class="intro_inner">
                 <div class="info">
                     <h2> 대전아쿠아리움은...</h2>
-                    <p class="p1">전쟁에 대비해 지하방공호로 활용됐던
+                    <p class="p1">전쟁에 대비해 지하방공호로 활용됐던 <br>
                         ​대전 도심의 천연동굴을 변화시킨 수족관으로,</p>
                     <p class="p2">​국내 최초, 최대인 담수어 아쿠아리움 입니다.</p>
-                    <p class="p3">​다른 나라의 다양한 담수어류를 국가별로 만나 볼 수 있고,
+                    <p class="p3">​다른 나라의 다양한 담수어류를 국가별로 만나 볼 수 있고, <br>
                         ​테마별로 재미있게 꾸며진 어류들을 볼 수 있습니다.</p>
-
                 </div>
 
                 <div class="floor">
                     <ul>
-                        <li>1F
-                            <em>한국관</em>
+                        <li>
+                            <div class="f_bg"><img src="img/aquarium_floor.png" alt="">
+                                <div class="f_text f1">
+                                    <p>1F</p>
+                                    <em>한국관</em>
+                                </div>
+                            </div>                            
                         </li>
-                        <li>2F
-                            <em>한국관</em>
+                        <li>
+                            <div class="f_bg"><img src="img/aquarium_floor.png" alt="">
+                                <div class="f_text">
+                                    <p>2F</p>
+                                    <em>비버관 <br>
+                                        체험동물원</em>
+                                </div>
+                            </div>
+                            
                         </li>
-                        <li>3F
-                            <em>한국관</em>
+                        <li>
+                            <div class="f_bg"><img src="img/aquarium_floor.png" alt="">
+                                <div class="f_text">
+                                    <p>3F</p>
+                                    <em>악어쇼 <br>
+                                        체험동물원</em>
+                                </div>
+                            </div>
+                            
                         </li>
-                        <li>실외
-                            <em>나무길테크로드</em>
+                        <li>
+                            <div class="f_bg"><img src="img/aquarium_floor.png" alt="">
+                                <div class="f_text">
+                                    <p class="f1">실외</p>
+                                    <em>나무길 <br>
+                                        데크로드</em>
+                                </div>
+                            </div>
+                            
+    <!-- ##################### floor 육각형안에 텍스트를 쏙 넣는 다른 방법이 있나?
+        그리고 전체가 정 가운데에 안있는것 같음 ###################### -->
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -95,8 +123,8 @@
             <section class="photoG">
                 <ul>
                     <li>포토1</li>
-                    <li>포토2</li>
-                    <li>포토3</li>
+                    <li><img src="img/naver-logo.jpg" alt=""></li>
+                    <li><img src="img/naver-logo.jpg" alt=""></li>
                     <li>포토4</li>
                     <li>포토5</li>
                     <li>포토6</li>
@@ -107,9 +135,9 @@
             <section class="animalInfo">
                 <!-- 백그라운드설정으로 png로 별설정하기  -->
                 <div class="title">
-                    <div>선</div>
+                    <div></div>
                     <div>내용</div>
-                    <div>선</div>
+                    <div></div>
                 </div>
     
                 <div class="gragh">
@@ -124,7 +152,7 @@
            
             <section class="animal">
                 <div class="title">
-                    <div>선</div>
+                    <div></div>
                     <div>
                         <p>ANIMAL</p>
                         <p>대전아쿠아리움</p>
@@ -133,17 +161,20 @@
                             만나보세요!
                         </p>
                     </div>
-                    <div>선</div>
+                    <div></div>
                 </div>
 
                 <div class="list">
                     <ul>
-                        <li><a href="">
+                        <li><a href="" class="list01">
                             <div class="text">
-                                <div>꽃사슴</div>
+                                <p>꽃사슴</p>
+                                <p>실외 나무길 데크로드</p>
+            <!-- ##################### 이게 아닌가? ###################### -->
+                                <p>여름엔 분홍빛 밤색과 노란색 반점 <br>
+                                    겨울에는 어두운 갈색을 띠고 여름털의 반점 <br> 흔적이 보이는 특징이 있는 꽃사슴</p>
                             </div>
-                            <img src="img/animal_01.jpg" alt="">
-                            </a>
+                            <img src="img/animal_01.jpg" alt=""></a>
                         </li>
                         <li><a href="">
                             <div class="text">
@@ -238,16 +269,50 @@
             <!-- resetvation이 position으로 mapBox를 기준으로 위에 올림 -->
             <section class="reservation">
                 <form action="">
-
                     <div class="cal">달력들어갈 자리</div>
+
+                    
+                    <p class="text">인원선택 (필수)</p>
+
                     <div class="menu">
-                        <p>방문 인원선택 (필수)</p>
+                        <p>방문인원</p>
                         <div class="menu_C">
-                            <p>이것저것</p>
+                            <p>성인</p>
+                            <p>청소년</p>
+                            <p>어린이/경로</p>
+                            <p>장애인</p>
                         </div>
                     </div>
-                    <div class="opt">내역?</div>
-                    <div class="btn">예약하기</div>
+                    <div class="opt">
+                        <p>추가옵션(선택)</p>
+                        <div>
+                            <p>단체예약 (20인이상)</p>
+                            <p>체크빡스...</p>
+                        </div>
+                    </div>
+
+                    <div class="reser">
+                        <div class="reser01">
+                            <ul>
+                                <li>성인</li>
+                                <li>1</li>
+                                <li>23,000원</li>
+                            </ul>
+                        </div>
+                        <div class="reser02">
+                            <ul>
+                                <li>청소년</li>
+                                <li>2</li>
+                                <li>42,000원</li>
+                            </ul>
+                        </div>
+                        <div class="reser03">
+                            <p>65,000원</p>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <p><a href="">예약하기</a></p>
+                    </div>
                     
                 </form>
             </section>
