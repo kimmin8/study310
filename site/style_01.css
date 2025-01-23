@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/* 전체 설정 */
+
+*{margin: 0;
+    padding: 0;}
+ul, ol{list-style: none;}
+a{text-decoration: none;
+    color: #000;}
+img{border:none;
+    vertical-align: bottom;}
+
+
+/* 레이아웃 설정 */
+
+/* 헤더 */
+.boxA{margin-top: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #666;}
+
+nav ul{display: flex;
+justify-content: flex-end;}
+nav ul li a{display: block;
+    font-size: 14px;
+padding: 10px 15px;
+margin: 10px;}
+
+/* 메인 이미지 */
+
+.box3 img{max-width: 100%;}
+
+/* 공지사항 */
+
+.box4{padding-top: 10px;
+    padding-bottom: 20px;}
+.notice h2 {font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;}
+.notice ul a{display: block;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 2px dotted #ddd;}
+
+.notice ul a:hover{background-color: lightcyan}
+
+.notice ul li a{display: flex;   flex-wrap: nowrap;}
+.notice ul a time{font-weight: bold;
+    color: #666;
+    margin-right: 10px;}
+
+.notice ul a text{width: auto;}
+
+/* 카피라이트 */
+
+.box5 {background-color: #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;}
+.box5 .copyrigth{font-size: 16px;
+    color: #666;}
+
+
+
+/* 박스 좌우 여백 설정 */
+
+.boxA, .box4, .box5{padding-left: 15px;
+padding-right: 15px;}
+
+
+/* 미디어 쿼리 구간 설정 ################################ */
+
+/* ~ 599px 이하*/
+@media (max-width:599px){
+
+    nav ul{display: flex;
+        justify-content: center;}
+        nav ul li a{display: block;
+            font-size: 12px;
+        padding: 5px 10px;}
+
+}
+
+/* 768px ~ 이상*/
+@media (min-width:768px){
+    .boxA {display: flex;
+    justify-content: space-between;}
+    .box1{float: left; width: 50%;}
+    .box2{float: left; width: 50%;}
+}
+
+/* 1200px ~ 이상*/
+@media (min-width:1200px){
+
+    .boxA-1, .box3, .box4, .copyrigth{width: 1200px;
+    margin: 0 auto;}
+
+
+}
