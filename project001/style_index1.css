@@ -1,6 +1,9 @@
 /* 언어설정 */
 @charset "utf-8";
 
+/* 구글폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Nanum+Pen+Script&family=Song+Myung&display=swap');
+
 /* 기본설정 */
 * {margin: 0; padding: 0;}
 ul,ol {list-style: none;}
@@ -15,7 +18,10 @@ body{overflow-x:hidden;}
 #wrap {display: flex;
     flex-flow: row wrap;
     width: 100%;
-    margin: 0 auto;}
+    margin: 0 auto;
+    font-family: "Nanum Gothic", serif;
+    font-weight: 400;
+    font-style: normal;}
 
 /* 헤더 */
 .header {width: 100%;
@@ -33,7 +39,8 @@ body{overflow-x:hidden;}
 .header .navi ul li{margin-right: 10px;}
 .header .navi ul li a{display: block; padding: 5px 15px;
     margin:5px auto;
-    color: #fff;}
+    color: #fff;
+    font-size: 16px;}
 
 .header .icon {width: 44px;
 position: absolute;
@@ -43,12 +50,16 @@ margin-left: -22px;}
 .header .icon img{width: 100%;}
 
 .header .text {position: absolute;
-left: 27%; top: 30%;
-font-size: 16px;
-color: #2877E5;}
-.header .text span{font-size: 22px;
+left: 28%; top: 32%;
+font-size: 22px;
+color: #2877E5;
+font-family: "Nanum Pen Script", serif;
+font-weight: 400;
+font-style: normal;}
+
+.header .text span{font-size: 32px;
 color: #fff;
-margin-left: 30px;}
+margin-left: 35px;}
 
 
 /* 체험프로그램 */
@@ -94,7 +105,10 @@ margin-left: 30px;}
     height: 810px;
     position: relative;
     overflow: hidden;}
-.program .listBox img{width: auto; height: 100%;}
+.program .listBox img{width: auto; height: 100%;
+    transform: translateX(-300px);}
+.program .listBox li:nth-child(3) img{width: auto; height: 100%;
+    transform: none;}
 .program .listBox .text{width: 100%; height: 0;
     position: absolute; left: 0; bottom: 0;
     background-color: rgb(255, 255, 255, 0.8);
@@ -105,7 +119,8 @@ margin-left: 30px;}
 
     .program .listBox .text p{margin-top: 50px;
     color:#000;
-    font-size: 22px;}
+    font-size: 22px;
+    font-family: "Gowun Dodum", serif;}
     .program .listBox .text .btn a{
         color: #424242;
         display: block;
@@ -114,6 +129,7 @@ margin-left: 30px;}
         font-size: 24px;
         text-align: center;
         margin-top: 30px;
+        font-family: "Gowun Dodum", serif;
     }
 
 .program .listBox li:hover {width: 60%; height: 810px;
@@ -151,7 +167,15 @@ align-items: center;}
     padding-top: 25px;
     padding-bottom: 35px;}
 .intro .intro_inner .info h2{font-size: 45px;
-    color: darkblue;}
+    color: darkblue;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;}
+
+.intro .intro_inner .info p{
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;}
 .intro .intro_inner .info .p1{font-size: 20px;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -198,14 +222,15 @@ height: 3000px;
 background-color: gray;
 display: flex;
 flex-direction: column;}
-/* 백그라운드 그라데이션 */
 
+/* 백그라운드 그라데이션 */
 .group{background: linear-gradient(#101E36, #0E2449, #093888);}
 
 /* 포토갤러리 */
 
 .group .photoG{width: 100%;
-    height: calc(100vh - 50px);}
+    height: auto;
+    padding-bottom: 50px;}
 .group .photoG ul{width: calc(350px * 8);
     height: 100%;
     display: flex;
@@ -215,15 +240,18 @@ flex-direction: column;}
 .group .photoG ul li{width: 350px;
     margin-left: 40px;
     height: 450px;
-    overflow: hidden;}
+    overflow: hidden;
+    box-shadow: 2px 2px 2px rgb(49, 49, 49);}
 .group .photoG ul img{width:auto; height: 450px;} 
 .group .photoG ul li:nth-child(odd){margin-top: 150px;}
 
 
 /* 동물 현황 */
 
-.group .animalInfo {width: 100%; height: calc(100vh + 300px);
-        background-image: url(img/star_bg.png);
+.group .animalInfo {width: 100%; height: auto;
+    margin-top: 300px;
+    margin-bottom: 250px;
+    background-image: url(img/star_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -236,9 +264,12 @@ flex-direction: column;}
 .group .animalInfo .gragh img{max-width: 100%;}
 .group .animalInfo .text p{text-align: center; margin-top: 60px;
     color: #fff;
-    font-size: 20px;}
+    font-size: 30px;
+    font-family: "Song Myung", serif;
+    text-shadow: 0px 0px 6px rgb(231, 231, 162);}
 .group .animalInfo .text p:nth-child(2){margin-top: 30px;
-    font-size: 16px;}
+    font-size: 25px;
+    font-family: "Song Myung", serif;}
 
 
 .animalInfo .title{
@@ -250,35 +281,46 @@ flex-direction: column;}
 .animalInfo .title div:nth-child(2){width: 40%;
     font-size: 30px;
     color: #21C0EA;
-    background-color: transparent;}
+    background-color: transparent;
+    font-family: "Song Myung", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 0px 0px 6px rgb(231, 231, 162);}
 .animalInfo .title div:nth-child(3){width: 30%; height: 1px;}
 
 .animalInfo .title div em{font-style: normal;
-    font-size: 45px;
-}
+    font-size: 45px;}
 
 /* 동물 소개 */
-.group .animal {width: 100%; height: 100vh;}
+.group .animal {width: 100%; height: auto;
+    padding-bottom: 50px;}
 .group .animal .title{
     width: 100%;    
     display: flex;
     align-items: center;}
 .group .animal .title div{background-color: #fff;}
-.group .animal .title div:nth-child(1){width: 60%; height: 1px;}
-.group .animal .title div:nth-child(3){width: 15%; height: 1px;}
-.group .animal .title div:nth-child(2){width: 25%;
+.group .animal .title div:nth-child(1){width: 62%; height: 1px;}
+.group .animal .title div:nth-child(3){width: 18%; height: 1px;}
+.group .animal .title div:nth-child(2){width: 20%;
     background-color: transparent;
     font-size: 28px;
+    font-family: "Song Myung", serif;
+    font-weight: 400;
+    font-style: normal;
     color: #fff;
-    text-align: right;}
-    .animal .title div:nth-child(2) p{margin-right: 15px;}
-    .animal .title div:nth-child(2) span{display: inline-block;
+    text-align: right;
+    text-shadow: 0px 0px 6px rgb(231, 231, 162);}
+.animal .title div:nth-child(2) p{margin-right: 15px;}
+.animal .title div:nth-child(2) span{display: inline-block;
         padding: 0 3px;
         border-right: 4px solid #b3b3b3;
         margin-right: 2px;
         font-size: 28px;
+        font-family: "Nanum Gothic", serif;
+        font-weight: 400;
+        font-style: normal;        
         color: #b3b3b3;}
-    .animal .title div:nth-child(2) em{font-style: normal;
+.animal .title div:nth-child(2) em{font-style: normal;
         font-weight: bold;
         font-size: 45px;
         color: #01AAD7;}
@@ -289,17 +331,20 @@ flex-direction: column;}
 .group .animal .list ul{display: flex;
 flex-direction: column;
 align-items: center;}
-.group .animal .list ul li img{width: 760px; height: 260px;
-max-width: 100%;
-    border: 1px solid transparent;
+.group .animal .list ul li .img{width: 760px; height: 260px;
+    overflow: hidden;
+    transform:translateY(-10px);
+    max-width: 100%;
     border-radius: 20px;}
 .group .animal .list ul li{height: 330px;
 border-bottom: 1px solid #fff;}
-.group .animal .list p{text-align: center;
+.group .animal .list>p{text-align: center;
     color: #fff;
-    margin-top: 30px;
+    margin-top: 25px;
+    padding-bottom: 50px;
     font-size: 25px;}
-.group .animal .list p a{ color: #fff;} 
+.group .animal .list p a{ color: #fff;
+    font-family: "Song Myung", serif;} 
 
 .animal .list .list01{width: 1190px;
     height: auto;
@@ -311,65 +356,71 @@ padding-top: 40px;}
 display: flex;
 flex-wrap: wrap;
 flex-direction: row;
-}
-.list01 .text p:nth-child(1){width: 45%;
+font-family: "Song Myung", serif;
+color: #fff;}
+.list01 .text p:nth-child(1){width: 50%;
     text-align: start;
-    font-size: 26px;
+    font-size: 28px;
     margin-top: 60px;
-    margin-left: 5px;}
+    text-shadow: 0px 0px 6px rgb(231, 231, 162);}
 .list01 .text p:nth-child(2){width: 50%;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 72px;}
 .list01 .text p:nth-child(3){width: 100%;
     text-align: start;
-    font-size: 16px;}
+    font-size: 20px;}
 
 
 
 /* 이벤트/공지사항/문답 */
 
 .eventBox{width: 100%;
-height: calc(100vh - 350px);
-background-color: darkseagreen;
+background-color: transparent}
+
+.eventBox .eventBox-1{width: 80%;
+margin: 0 auto;
+padding-top: 20px;
+padding-bottom: 50px;
 display: flex;}
 
-.eventBox .event{width: 50%;
-background-color: darkslategrey;
-padding-top: 20px;
+/* 이벤트 */
 
-margin-left: 100px;
-margin-right: 15px;}
+.eventBox .event{width: 50%; height: auto;}
 
-.eventBox .event .title{width: 100%;
-    border-bottom: 0.5px solid #000;
+.eventBox .event .title{width: 90%;
+    border-bottom: 0.5px solid #606060;
     display: flex;
-    justify-content: space-between;}
+    justify-content: space-between;
+    margin: 0 auto;}
     .eventBox .event .title h2{margin-left: 10px;
-                               font-size: 40px;}
+                               font-size: 38px;
+                            color: #093888;
+                            font-family: "Nanum Gothic", serif;
+                            font-weight: bold;}
     .eventBox .event .title p{margin-right: 10px;
-                        font-size: 40px;;}
+                        font-size: 40px;}
 
 
 .eventBox .event .list {width: 100%;}
-.eventBox .event .list ul{display: flex;
+.eventBox .event .list ul{width: 80%;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px 30px;}
+    margin-top: 30px;
+    margin-left: 10%;}
 
-.eventBox .event .list ul li{
-    margin-right: 15px;
-}
-
-        /* ...................... */
-.eventBox .event .list ul .event01 { width: 250px; height: 350px;
-        background-color: #01AAD7;
+.eventBox .event .list ul li{width: 50%;}
+.eventBox .event .list ul .event01 {width:90%; 
         border: 1px solid #000;
         border-radius: 10px 10px 0 0;
         box-sizing: border-box;
         display: flex;
-        flex-direction: column;}
-    .eventBox .event .list ul .event01 img{width: 100%;}
+        flex-direction: column;
+        align-items: baseline;
+        margin: 0 auto;
+        overflow: hidden;}
+
+    .eventBox .event .list ul .event01 img{max-width: 100%;}
     .eventBox .event .list ul .event01 .text{background-color: #fff;
         width: 100%; height: 90px;
         border-radius: 10px 10px 0 0;
@@ -377,82 +428,102 @@ margin-right: 15px;}
         text-align: center;
         padding-top: 20px;
         font-size: 18px;
-        position: relative;}
+        position: relative;
+        font-family: "Nanum Gothic", serif;}
     .eventBox .event .list ul .event01 div span{font-size: 16px;
         font-weight: bold;}
     .eventBox .event .list ul .event01 div p{margin-top: -10px;}
     .eventBox .event .list ul .event01 div p:nth-child(2){
         color: #606060;
         font-size: 12px;
+
         position: absolute;
         right: 10px;
         bottom: 10px;}
 
 
+/* 공지사항 / 문답 */
 
+.eventBox .borad{width: 50%; height: 100%;}
 
-.eventBox .borad{width: 50%;
-    background-color: palegoldenrod;
-    padding-top: 20px;
-    margin-right: 100px;
-    margin-left: 15px;}
-.eventBox .borad .title{width: 100%;
+.eventBox .borad .title{width: 90%;
+    height: 50px;
     display: flex;
     justify-content: space-between;
-
-    border-bottom: 0.5px solid #000;}
-
+    margin: 0 auto;
+    border-bottom: 1px solid #606060;}
 .eventBox .borad .title i{font-size: 40px;}
-.eventBox .borad .title ul{display: flex;}
-.eventBox .borad .title ul li{ margin: 0 10px; padding: 0 10px;
-    font-size: 40px;
-    color: #093888;}
-.eventBox .borad .title ul li:nth-child(2){font-size: 30px;
-    color: #525252;}
 
-.event .conBox .notice{width: 100%;}
-.eventBox .conBox .notice ul{width: 540px; height: 370px;
-    text-align: left;
-    margin: 50px auto;}
-.eventBox .conBox .notice li{margin: 10px;
-    padding: 5px 15px;
-    border-bottom:  1px dotted #666;
-    font-size: 18px;}
+.eventBox .borad .title ul{display: flex;}
+.eventBox .borad .title ul li{ margin: 0 10px; padding: 5 10px;
+    font-size: 38px;
+    color: #093888;
+    cursor: pointer;
+    font-family: "Nanum Gothic", serif;
+    font-weight: bold;}
+.eventBox .borad .title ul li:nth-child(2){font-size: 30px;
+        color: #606060;
+        cursor: pointer;
+        font-family: "Nanum Gothic", serif;
+        font-weight: bold;}
+.eventBox .borad .title ul li:hover{font-size: 38px;
+    color: #093888;}
+
+
+.event .conBox .notice{width: 90%; margin: 0 auto;}
+.eventBox .conBox .notice ul{width: 80%;
+    margin: 30px auto;}
+.eventBox .conBox .notice li{width: 100%;
+    margin: 20px 0;
+    padding-bottom: 15px;
+    border-bottom:  1px dotted #666;}
+.eventBox .conBox .notice li a{font-size: 18px;
+        font-family: "Nanum Gothic", serif;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: left;}
 .eventBox .conBox .notice li:last-child{border-bottom:  1px solid #000;}
 .eventBox .conBox .notice li:first-child{margin-top: 10px; }
 
+
+.notice02 {display: none;}
 
 
 /* sns */
 
 .sns{width: 100%;
-height: calc(100vh - 300px);
-background-color: darkkhaki;
-padding: 20px;
 }
-.sns .title{width: 100%;
+.sns .title{width: 78%;
+    margin: 0 auto;
 display: flex;
-border-bottom: 0.5px solid #000;
+border-bottom: 1px solid #606060;
 padding-bottom: 5px;
-margin: 0 80px;
-margin-bottom: 20px;}
-.sns .title h2{width: 70%; 
-    font-size: 40px;}
-.sns .title ul{width: 30%;
+}
+.sns .title h2{width: 90%; 
+    font-size: 38px;
+    color: #093888;
+    font-family: "Nanum Gothic", serif;
+    font-weight: bold;}
+.sns .title ul{width: auto;
     display: flex;}
-.sns .title ul li{width: 50px; height: 50px;
+.sns .title ul li{width: 50px;
 border: 1px solid transparent;
 border-radius: 50%;
 margin: 0 30px;
 overflow: hidden;
 }
 
-.sns .list ul{display: flex;
-    justify-content: center;}
+.sns .list{padding-bottom: 50px;}
+.sns .list ul{width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;}
 
-    .sns .list ul li{margin-right: 45px;}
+.sns .list ul li{margin-right: 45px;}
 .sns .list ul li img{width: 300px; height: 300px;
     border: 1px solid #000;}
+    
 
 .sns .list ul li span{font-size: 14px;
     color: #787878;
@@ -465,14 +536,15 @@ overflow: hidden;
 /* 연중무휴 */
 
 .clock{width: 100%;
-    height: 450px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: url(img/jelly.jpg);
     background-size: cover;
-    background-repeat: no-repeat;}
+    background-repeat: no-repeat;
+    background-attachment: fixed;}
 
 .clock .clockbox {display: flex;
     justify-content: center;
@@ -498,13 +570,12 @@ overflow: hidden;
 /* 오시는 길 / 예약*/
 
 .mapBox{width: 100%;
-height: 1330px;
+height: 1350px;
 background-color: lightblue;
 position: relative;}
 
-.map{width: 100%; height: 100%;
-    background-color: transparent;
-}
+.map{width: 100%; height: 100%;}
+.map>iframe{width: 100%; height: 100%;}
 
 .mapBox .maptext {position: absolute;
 right: 30px;
@@ -517,109 +588,126 @@ font-size: 20px;
 margin-top: 30px;}
 .mapBox .maptext span{font-size: 16px;}
 
-.reservation {width: 620px; height: 1150px;
-    background-color: rgba(0, 0, 150, 0.2);
-    border: 1px solid transparent;
+/* 예약 */
+.reservation {width: 560px; height: 1000px;
+    background-color: rgba(27, 155, 214, 0.5);
     border-radius: 50px 50px 0 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    left: 200px;
+    left: 230px;
     bottom: 0;}
 
-.reservation .cal {width: 500px; height: 440px;
+.reservation form{margin-left: 40px;}
+
+
+.reservation .cal {width: 450px; height: 350px;
     background-color: #fff;
-margin-top: 80px;}
+    margin-top: 50px;
+    overflow: hidden;}
+.reservation .cal>img{transform: translateY(10px) translateX(-15px);}
 
 .reservation .text{
-    color: #fff;
+    color: #000;
     margin-top: 15px;
     margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.reservation .menu {width: 500px;
+.reservation .menu {width: 450px;
     display: flex;
     flex-direction: column;}
-.reservation .menu p{width: 500px; height: 40px;
-    background-color: #DDD;}
+.reservation .menu p{
+    padding: 8px 0 8px 5px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;}
     .reservation .menu .menu_C ul{display: flex;
-        flex-direction: column;} 
-        .reservation .menu .menu_C ul li{width: 500px; height: 40px;
-        background-color: #ccc;}
+        flex-direction: column;
+        text-align: start;} 
+        .reservation .menu .menu_C ul li{width: 440px;
+        padding:8px 0 8px 10px;
+        background-color: #eee;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;}
+        .reservation .menu .menu_C ul li input{margin-right:10px;
+        padding: 2px 0;}
 
-.reservation .opt {margin-top: 15px;}
-.reservation .opt div{width: 500px; height: 40px;
-    background-color: #DDD;
+.reservation .opt {margin-top: 15px;
+                margin-bottom: 15px;}
+.reservation .opt div{width: 440px;
+    padding: 8px 0 8px 5px;
+    background-color: #fff;
     display: flex;
     align-items: center;
-    justify-content:space-between;}
-.reservation .opt div input{width: 10%;}
+    justify-content:space-between;
+    padding-left: 10px;}
+.reservation .opt div input{margin-right: 15px;}
 
 
-.reservation .reser{width: 500px; height: 150px;
-    background-color: blueviolet;
+.reservation .reser{width: 450px; height: 140px;
+    background-color: #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-    /* #########################################################
-    
-    크기? 뭘 여쭤보려햇지요*/
+
 .reservation .reser .reser01{width: 100%;
-    background-color: gold;}
+    background-color: #ccc;
+    padding: 3px 0;
+    border: 5px solid #eee;
+    box-sizing: border-box;    
+    margin: 3px 0;}
 .reservation .reser .reser01 ul{display: flex;
     align-items: center;
     justify-content: space-between;}
 .reservation .reser .reser01 li:nth-child(1){width: 48%;
     text-align:start;
-margin-left: 5px;}
+margin-left: 10px;
+font-size: 18px;}
 .reservation .reser .reser01 li:nth-child(2)
-{ width: 4%; background-color: skyblue;
+{ width: 4%; background-color: #bbb;
     display: block;
 padding: 3px 10px;
 text-align: center;}
 .reservation .reser .reser01 li:nth-child(3){width: 48%;
 text-align: end;
-margin-right: 5px;}
+margin-right: 10px;
+font-size: 18px;}
 
 .reservation .reser .reser02{width: 100%;
-    background-color: rgb(98, 206, 113);}
-.reservation .reser .reser02 ul{display: flex;
-    align-items: center;
-    justify-content: space-between;}
-.reservation .reser .reser02 li:nth-child(1){width: 48%;
-        text-align:start;
-    margin-left: 5px;}
-.reservation .reser .reser02 li:nth-child(2)
-    { width: 4%; background-color: skyblue;
-        display: block;
-    padding: 3px 10px;
-    text-align: center;}
-.reservation .reser .reser02 li:nth-child(3){width: 48%;
-    text-align: end;
-    margin-right: 5px;}
-
-.reservation .reser .reser03{width: 100%;
 text-align: end;
-margin-right: 5px;}
+margin-top: 5px;
+margin-right: 20px;
+font-size: 20px;
+color: #26A0D5;}
 
 .reservation .btn{width: 500px; height: 50px;
 margin-top: 20px;
-display: flex;
-justify-content: flex-end;}
+text-align: end;}
 .reservation .btn a{
 display: inline-block;
-padding: 5px 30px;
+padding: 2px 35px;
 text-align: center;
-border: 2px solid #fff;
+border: 1px solid #fff;
 border-radius: 5px;
-color: #fff;}
+box-sizing: border-box;
+color: #fff;
+font-size: 20px;
+background-color: rgba(255, 255, 255, 0.2);
+margin-right: 48px;}
 
-
-
+.reservation .btn a:hover{
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #01AAD7;
+    margin-right: 48px;}
 
 
 
