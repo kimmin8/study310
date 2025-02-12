@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표 만들기 (과제)</title>
+</head>
+<body>
+
+    <div class="bg">
+        <h1>성적 확인하기</h1>
+    
+        <form action="">
+            <table border="1">
+                <tr>
+                    <td>국어</td>
+                    <td>영어</td>
+                    <td>수학</td>
+                    <td>과학</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="" id="k"></td>
+                    <td><input type="text" name="" id="e"></td>
+                    <td><input type="text" name="" id="m"></td>
+                    <td><input type="text" name="" id="s"></td>
+                </tr>
+            </table>
+    
+            <div><button id="btn"><p>확인하기</p></button></div>
+            <div class="end">
+                <p><span id="name">00</span>님의 성적은</p>
+                <ul>
+                    <li>총점 : <span id="add">00</span></li>
+                    <li>평균 : <span id="ever">00</span></li>
+                    <li><span id="graed"></span></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+
+        let name = prompt('이름을 적어주세요')
+        document.getElementById('name').textContent = name 
+
+        document.getElementById('btn').addEventListener('click',function(event){
+            
+            event.preventDefault()
+            let kor = Number(document.getElementById('k').value);
+            let eng = Number(document.getElementById('e').value);
+            let math = Number(document.getElementById('m').value);
+            let sic = Number(document.getElementById('s').value);
+
+            let add = kor + eng + math + sic
+            let ever = add / 4
+            document.getElementById('add').textContent = add;
+            document.getElementById('ever').textContent = ever;
+
+            let grade ='';
+
+            if(ever >= 90) grade = '학점 A';
+            else if(ever >90 && ever >= 80) grade = '학점 B';
+            else if(ever >80 && ever >= 70) grade = '학점 C';
+            else if(ever >70 && ever >= 60) grade = '학점 D';
+            else grade = '학점 F';
+
+            document.getElementById('graed').textContent = grade
+
+        })
+    </script>
+    <style>
+        .bg{width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 3px double red;}
+
+        h1{text-align: center;
+            width: 100%;
+            background-color: yellow;
+            margin: 0;
+            margin-bottom: 20px;
+            padding: 5px 0;}
+
+            form{width: 100%;}
+
+        table{margin: 0 auto;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+            text-align: center;}
+        table td{padding: 8px 0;}
+
+        input{background-color:transparent;
+        border: none;}
+
+        .bg div>button{margin-left: 350px;
+            color: #000;
+        background-color: transparent;
+        border: 1px solid #000;
+        margin-bottom: 25px;}
+
+        div>button:hover{color: #000;
+            background-color: red;
+            border: 1px solid #fff;}
+
+        div>button>p{font-size: 20px;
+            margin: 2px;}
+
+        .end{width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid #000;}
+
+        ul{list-style: none;
+            margin-right: 45px;}
+
+        .end>p{margin:0;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            background-color: yellow;}
+
+        ul>li{font-size: 18px;}
+        ul>li:last-child{font-weight: bold;
+            color: red;
+            margin-top: 5px;
+        font-size: 20px;}
+    </style>
+
+</body>
+</html>
