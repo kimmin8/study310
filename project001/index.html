@@ -15,10 +15,9 @@
     <script src="https://kit.fontawesome.com/1ede8dc728.js"crossorigin="anonymous"></script>
 
     <!-- 제이쿼리 CDN -->
-    <script src="http://code.jqery.com/jqery-latest.js"></script>
-    <script>
-        // 자바는 안해용
-    </script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="js.js"></script>
 </head>
 
 <body>
@@ -27,14 +26,44 @@
         <header class="header">
             <!-- height를 100vh로 설정 -->
             <nav class="navi">
-                <ul>
-                    <li><a href="">대전아쿠아리움</a></li>
-                    <li><a href="">프로그램</a></li>
+                <ul class="navi_1">
+                    <li><a href="">대전아쿠아리움</a>
+                        <ul>
+                            <li><a href="">업체소개</a></li>
+                            <li><a href="">오시는길</a></li>
+                            <li><a href="">공지사항</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">프로그램</a>
+                        <ul>
+                            <li><a href="">체험하기</a></li>
+                            <li><a href="">포토갤러리</a></li>
+                        </ul>
+                    </li>
                     <li><a href="">야생동물현황</a></li>
-                    <li><a href="">동물이야기</a></li>
-                    <li><a href="">이벤트</a></li>
-                    <li><a href="">이용안내</a></li>
-                    <li><a href="">예약</a></li>
+                    <li><a href="">동물이야기</a>
+                        <ul>
+                            <li><a href="">동물이야기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">이벤트</a>
+                        <ul>
+                            <li><a href="">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">이용안내</a>
+                        <ul>
+                            <li><a href="">내부시설</a></li>
+                            <li><a href="">식당*숙박</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">예약</a>
+                        <ul>
+                            <li><a href="">개인예약</a></li>
+                            <li><a href="">단체예약</a></li>
+                            <li><a href="">자주하는 질문</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <div class="icon"><img src="img/landing_scroll.png" alt=""></div>
@@ -110,7 +139,7 @@
                     <ul>
                         <li>
                             <div class="f_bg"><img src="img/aquarium_floor.png" alt="">
-                                <div class="f_text f1">
+                                <div class="f_text">
                                     <p>1F</p>
                                     <em>한국관</em>
                                 </div>
@@ -137,7 +166,7 @@
                         <li>
                             <div class="f_bg"><img src="img/aquarium_floor.png" alt="">
                                 <div class="f_text">
-                                    <p class="f1">실외</p>
+                                    <p class="">실외</p>
                                     <em>데크로드</em>
                                 </div>
                             </div>
@@ -155,6 +184,8 @@
                     <li><img src="img/photogalley_02.jpg" alt=""></li>
                     <li><img src="img/photogalley_03.jpg" alt=""></li>
                     <li><img src="img/photogalley_04.jpg" alt=""></li>
+                </ul>
+                <ul>                    
                     <li><img src="img/photogalley_05.png" alt=""></li>
                     <li><img src="img/photogalley_02.jpg" alt=""></li>
                     <li><img src="img/photogalley_02.jpg" alt=""></li>
@@ -262,26 +293,28 @@
                             </div>
                             <div class="conBox">
                                 <!-- 공지사항 -->
-                                <div class="notice">
-                                    <ul>
-                                        <li><a href="">다이버의 수중탐사 시간 변경 안내</a></li>
-                                        <li><a href="">악어쇼에서 요금 변경 안내드립니다.</a></li>
-                                        <li><a href="">너의 밝은 미래를 응원할게! 2024년 행동 풍부화의 날!</a></li>
-                                        <li><a href="">할로윈데이와 만난 '행동 풍부화의 날'</a></li>
-                                        <li><a href="">2024년 09월 15일 행동 풍부화의 날!</a></li>
-                                        <li><a href="">[2024년 1월 1일 관람 시간표]</a></li>
-                                    </ul>
-                                </div>
-                                <!-- FAQs -->
-                                <div class="notice02">
-                                    <ul>
-                                        <li><a href="">다이버의 수중탐사 시간 변경 안내?</a></li>
-                                        <li><a href="">악어쇼에서 요금 변경 안내?</a></li>
-                                        <li><a href="">너의 밝은 미래를 응원할게!</a></li>
-                                        <li><a href="">할로윈데이와 만난 '행동 풍부화의 날'</a></li>
-                                        <li><a href="">2024년 09월 15일 행동 풍부화의 날!</a></li>
-                                        <li><a href="">[2024년 1월 1일 관람 시간표]</a></li>
-                                    </ul>
+                                <div class="notbox">
+                                    <div class="notice">
+                                        <ul>
+                                            <li><a href="">다이버의 수중탐사 시간 변경 안내</a></li>
+                                            <li><a href="">악어쇼에서 요금 변경 안내드립니다.</a></li>
+                                            <li><a href="">너의 밝은 미래를 응원할게! 2024년 행동 풍부화의 날!</a></li>
+                                            <li><a href="">할로윈데이와 만난 '행동 풍부화의 날'</a></li>
+                                            <li><a href="">2024년 09월 15일 행동 풍부화의 날!</a></li>
+                                            <li><a href="">[2024년 1월 1일 관람 시간표]</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- FAQs -->
+                                    <div class="notice02">
+                                        <ul>
+                                            <li><a href="">Q. 다이버의 수중탐사 시간이 궁금해요</a></li>
+                                            <li><a href="">Q. 악어쇼에서 요금은 얼마인가요?</a></li>
+                                            <li><a href="">Q. 진행되는 이벤트가 궁금해요!</a></li>
+                                            <li><a href="">Q. 체험동물원은 실외에 있나요?</a></li>
+                                            <li><a href="">Q. 단체로 식사할 수 있는 공간이 있나요?</a></li>
+                                            <li><a href="">Q. 연간 회원권이 있나요?</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>               
                         </section>      
@@ -309,7 +342,7 @@
                     </a></li>
                     <li><a href="">
                         <img src="img/sns_03.jpg" alt="">
-                        <p><span>네이버 블로그인스타그램</span> <br>
+                        <p><span>인스타그램</span> <br>
                             펫테일 게코를 소개합니다!</p>
                     </a></li>
                     <li><a href="">
@@ -329,15 +362,16 @@
                     </a></li>
                     <li><a href="">
                         <img src="img/sns_03.jpg" alt="">
-                        <p><span>인스타그램</span> <br>
-                            펫테일 게코를 소개합니다!</p>
-                    </a></li>
-                    <li><a href="">
-                        <img src="img/sns_01.png" alt="">
                         <p><span>네이버 블로그</span> <br>
                             펫테일 게코를 소개합니다!</p>
                     </a></li>
+                    <li><a href="">
+                        <img src="img/sns_04.jpg" alt="">
+                        <p><span>인스타그램</span> <br>
+                            [발표] 아쿠아리움 체험단</p>
+                    </a></li>
                 </ul>
+
             </div>
         </section>
 
@@ -354,15 +388,13 @@
         </section>
 
 
-        <div class="mapBox">
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3215.096833550438!2d127.41849307650944!3d36.30995857239103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654ed7244b3f81%3A0x96beb8f73ba98323!2z64yA7KCE7JWE7L-g7JWE66as7JuA!5e0!3m2!1sko!2skr!4v1738633715831!5m2!1sko!2skr" width="auto" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <!-- resetvation이 position으로 mapBox를 기준으로 위에 올림 -->
+        <div class="mapBox">          
+              
             <section class="reservation">
                 <form action="">
                     <div class="cal">
-                        <img src="img/calendar.jpg" alt="">
+                        <div id="datepicker"></div>
+                        <p class="day">선택날짜 : <span></span></p>
                     </div>
                     
                     <p class="text">인원선택 (필수)</p>
@@ -372,16 +404,16 @@
                         <div class="menu_C">
                             <ul>
                                 <li>성인
-                                    <input type="number" min="0" max="10" step="1" value="1">
+                                    <input type="number" min="0" max="10" step="1" value="0">
                                 </li>
                                 <li>청소년
-                                    <input type="number" min="0" max="10" step="1" value="1">
+                                    <input type="number" min="0" max="10" step="1" value="0">
                                 </li>
                                 <li>어린이/경로
-                                    <input type="number" min="0" max="10" step="1" value="1">
+                                    <input type="number" min="0" max="10" step="1" value="0">
                                 </li>
                                 <li>장애인
-                                    <input type="number" min="0" max="10" step="1" value="1">
+                                    <input type="number" min="0" max="10" step="1" value="0">
                                 </li>
                             </ul>
                         </div>
@@ -396,29 +428,32 @@
 
                     <div class="reser">
                         <div class="reser01">
-                            <ul>
-                                <li>성인</li>
-                                <li>1</li>
-                                <li>23,000원</li>
-                            </ul>
                         </div>
-                        <div class="reser01">
-                            <ul>
-                                <li>청소년</li>
-                                <li>2</li>
-                                <li>42,000원</li>
-                            </ul>
-                        </div>
+                        
                         <div class="reser02">
-                            <p>65,000원</p>
+                            <p></p>
                         </div>
                     </div>
                     <div class="btn">
-                        <p><a href="">예약하기</a></p>
-                    </div>
-                    
+                        <p>예약하기</p>
+                    </div>                    
                 </form>
             </section>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3215.096833550438!2d127.41849307650944!3d36.30995857239103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654ed7244b3f81%3A0x96beb8f73ba98323!2z64yA7KCE7JWE7L-g7JWE66as7JuA!5e0!3m2!1sko!2skr!4v1738633715831!5m2!1sko!2skr" width="auto" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+
+            <div class="reserok">
+                <div>
+                    <p>방문 예약이 완료되었습니다. <br>
+                        <span></span>
+                    </p>
+                    <p>확인</p>
+                </div>
+                
+            </div>
         
             <div class="maptext">
                 <h3>찾아오시는 길</h3>
@@ -429,6 +464,13 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <!-- 제일하단 지우지 마세요 -->
+        <div class="copyrigth">
+            <p>본 사이트는 학습용 포트폴리오 제작으로, 영상 및 이미지는 상업용으로 사용하지 않습니다.</p>
+            <p>copyrigth <b>&copy; kim.H.M</b> 2025. All Rigths Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 

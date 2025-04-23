@@ -32,22 +32,56 @@ body{overflow-x:hidden;}
     display: flex;
     flex-direction: column;
     position: relative;}
-.header .navi ul{width: 100%;
+.header .navi .navi_1{width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-top: 30px;}
-.header .navi ul li{margin-right: 10px;}
-.header .navi ul li a{display: block; padding: 5px 15px;
+    padding-top: 20px;}
+.header .navi .navi_1>li{margin-right: 5px;
+    padding: 0 10px;
+    position: relative;
+    transition: all 0.8s;}
+
+.header .navi .navi_1>li:hover{background-color: rgb(216, 178, 53);}
+
+.header .navi .navi_1>li:last-child{margin-right: 100px;}
+.header .navi .navi_1>li>a{display: block; padding: 5px 15px;
     margin:5px auto;
     color: #fff;
-    font-size: 16px;}
+    font-size: 18px;}
+
+
+
+    .navi_1>li>ul {width: 130px;
+        position:absolute;
+        transition: all 0.5s;
+        opacity: 0;}
+    .navi_1>li:hover>ul {
+        opacity: 1;}
+    .navi_1>li>ul>li{padding-left: 15px;
+        padding-bottom: 20px;}
+    .navi_1>li>ul>li>a{font-size: 16px;
+        background-color: rgba(53, 143, 216, 0.6);
+        color:#fff;
+        padding: 10px;}
+        .navi_1>li>ul>li:hover>a{
+            background-color: rgb(216, 178, 53);
+        border-bottom: 1px dotted #fff;}
+
 
 .header .icon {width: 44px;
-position: absolute;
-left: 50%;
-bottom: 50px;
-margin-left: -22px;}
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    margin-left: -22px;
+    animation: slider 2s infinite ease-in-out;}
 .header .icon img{width: 100%;}
+
+@keyframes slider { 
+    0% {bottom:  50px; opacity: 1;}
+    50% {bottom:  10px; opacity: 0.7;}
+    100% {bottom:  50px; opacity: 1;}
+    
+}
 
 .header .text {position: absolute;
 left: 28%; top: 32%;
@@ -104,7 +138,8 @@ margin-left: 35px;}
 .program .listBox li {width: 33.3333%;
     height: 810px;
     position: relative;
-    overflow: hidden;}
+    overflow: hidden;
+    transition: all 0.5s;}
 .program .listBox img{width: auto; height: 100%;
     transform: translateX(-300px);}
 .program .listBox li:nth-child(3) img{width: auto; height: 100%;
@@ -115,7 +150,8 @@ margin-left: 35px;}
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;}
+    align-items: center;
+    transition: all 1.2s;}
 
     .program .listBox .text p{margin-top: 50px;
     color:#000;
@@ -132,13 +168,12 @@ margin-left: 35px;}
         font-family: "Gowun Dodum", serif;
     }
 
-.program .listBox li:hover {width: 60%; height: 810px;
-transition: all 0.5s;}
+.program .listBox li:hover {width: 60%; height: 810px;}
 .program .listBox li:hover .text{width: 100%; height: 270px;
     position: absolute; left: 0; bottom: 0;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-transition: all 1.2s;} 
+} 
 
 
 
@@ -146,7 +181,7 @@ transition: all 1.2s;}
 
 .intro {width: 100%;
 height: 100vh;
-background-image: url(img/aquariumbg.jpg);
+background-image: url(img/aquariumbg1.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 display: flex;
@@ -189,12 +224,10 @@ align-items: center;}
     text-align: center;
     color: #fff;}
 
-
-.intro_inner .floor{}
 .intro_inner .floor ul{width: 1000px;
                         display: flex;
                         justify-content: space-between;}
-.intro_inner .floor ul li{}
+                        
 .intro_inner .floor ul li p{font-size: 35px;}
 .intro_inner .floor ul li em{font-size: 25px;
                             font-style: normal;}
@@ -204,7 +237,6 @@ align-items: center;}
 .floor .f_bg .f_text{position: absolute;
     left: 0;
     top: 0;
-
     width: 160px;
     height: 160px;
     text-align: center;
@@ -214,11 +246,14 @@ align-items: center;}
     align-items: center;
     color: #fff;}
 
+    .f_text:hover p{font-weight: bold;}
+    .f_text:hover em{font-weight: bold;}
+
     
 /* 포토갤러리 ~ 동물 소개 */
 
 .group{width: 100%;
-height: 3000px;
+height: auto;
 background-color: gray;
 display: flex;
 flex-direction: column;}
@@ -229,27 +264,53 @@ flex-direction: column;}
 /* 포토갤러리 */
 
 .group .photoG{width: 100%;
-    height: auto;
-    padding-bottom: 50px;}
-.group .photoG ul{width: calc(350px * 8);
+    height: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;}
+.group .photoG ul{width:100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;}
+    align-items: center;
+    position: absolute;}
+    .group .photoG ul:nth-child(1){left: 0;
+        animation: leftslide 50s linear infinite;}
+    .group .photoG ul:nth-child(2){left: 100%;
+        animation: leftslide2 50s linear infinite;}
 
-.group .photoG ul li{width: 350px;
-    margin-left: 40px;
+    @keyframes leftslide {
+
+        0% {left: 0;}
+        50% {left: -100%;}
+        50.0001% {left: 100%;}
+        100% {left: 0%;}
+        
+    }
+    @keyframes leftslide2 {
+
+        0% {left: 100%;}
+        50% {left: 0%;}
+        100% {left: -100%;}
+        
+    }
+
+.group .photoG ul>li{width: 350px;
     height: 450px;
     overflow: hidden;
-    box-shadow: 2px 2px 2px rgb(49, 49, 49);}
+    margin: 0 20px;
+    box-shadow: 2px 2px 2px rgb(49, 49, 49);
+    cursor: pointer;
+    perspective: 800px;}
 .group .photoG ul img{width:auto; height: 450px;} 
 .group .photoG ul li:nth-child(odd){margin-top: 150px;}
-
+.photoG ul>li:hover img{transform: translateZ(50px);
+transition: all 1s;} 
 
 /* 동물 현황 */
 
 .group .animalInfo {width: 100%; height: auto;
-    margin-top: 300px;
+    margin-top: 150px;
     margin-bottom: 250px;
     background-image: url(img/star_bg.png);
     background-size: cover;
@@ -292,7 +353,7 @@ flex-direction: column;}
     font-size: 45px;}
 
 /* 동물 소개 */
-.group .animal {width: 100%; height: auto;
+.group .animal {width: 100%;
     padding-bottom: 50px;}
 .group .animal .title{
     width: 100%;    
@@ -341,10 +402,11 @@ border-bottom: 1px solid #fff;}
 .group .animal .list>p{text-align: center;
     color: #fff;
     margin-top: 25px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     font-size: 25px;}
-.group .animal .list p a{ color: #fff;
-    font-family: "Song Myung", serif;} 
+.group .animal .list>p a{ color: #fff;
+    font-family: "Song Myung", serif;}
+    .list>p:hover a{ text-shadow: 0px 0px 6px rgb(231, 231, 162);}  
 
 .animal .list .list01{width: 1190px;
     height: auto;
@@ -371,12 +433,14 @@ color: #fff;}
     text-align: start;
     font-size: 20px;}
 
+    .list01:hover>.img{box-shadow: 0px 0px 50px rgba(231, 231, 162, 0.6);
+        box-sizing: border-box;}
+
 
 
 /* 이벤트/공지사항/문답 */
 
-.eventBox{width: 100%;
-background-color: transparent}
+.eventBox{width: 100%;}
 
 .eventBox .eventBox-1{width: 80%;
 margin: 0 auto;
@@ -436,15 +500,19 @@ display: flex;}
     .eventBox .event .list ul .event01 div p:nth-child(2){
         color: #606060;
         font-size: 12px;
-
         position: absolute;
         right: 10px;
         bottom: 10px;}
 
+        .eventBox .event .list li:hover .event01{
+            border: 2px dotted #000;
+        }
+
+
 
 /* 공지사항 / 문답 */
 
-.eventBox .borad{width: 50%; height: 100%;}
+.eventBox .borad{width: 50%; height: auto;}
 
 .eventBox .borad .title{width: 90%;
     height: 50px;
@@ -454,40 +522,55 @@ display: flex;}
     border-bottom: 1px solid #606060;}
 .eventBox .borad .title i{font-size: 40px;}
 
-.eventBox .borad .title ul{display: flex;}
+.eventBox .borad .title ul{display: flex;
+align-items:flex-end;}
 .eventBox .borad .title ul li{ margin: 0 10px; padding: 5 10px;
     font-size: 38px;
     color: #093888;
     cursor: pointer;
     font-family: "Nanum Gothic", serif;
     font-weight: bold;}
-.eventBox .borad .title ul li:nth-child(2){font-size: 30px;
+.eventBox .borad .title ul li:nth-child(2){font-size: 28px;
         color: #606060;
         cursor: pointer;
         font-family: "Nanum Gothic", serif;
         font-weight: bold;}
-.eventBox .borad .title ul li:hover{font-size: 38px;
-    color: #093888;}
 
 
-.event .conBox .notice{width: 90%; margin: 0 auto;}
-.eventBox .conBox .notice ul{width: 80%;
+.borad .conBox{width: 100%;
+    position: relative;}
+    .notbox{width: 90%;
+        height: auto;
+        margin: 0 auto;
+    position: relative;}
+.borad .conBox>div ul{width: 100%;
     margin: 30px auto;}
-.eventBox .conBox .notice li{width: 100%;
+.borad .conBox>div li{width: 100%;
     margin: 20px 0;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom:  1px dotted #666;}
-.eventBox .conBox .notice li a{font-size: 18px;
+.borad .conBox>div li a{font-size: 18px;
         font-family: "Nanum Gothic", serif;
         padding-bottom: 10px;
         padding-left: 15px;
         padding-right: 15px;
         text-align: left;}
-.eventBox .conBox .notice li:last-child{border-bottom:  1px solid #000;}
-.eventBox .conBox .notice li:first-child{margin-top: 10px; }
+.borad .conBox .notice li:last-child{border-bottom:  1px solid #000;}
+.borad .conBox>div li:first-child{margin-top: 10px; }
 
+.notice {position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display:block}
 
-.notice02 {display: none;}
+.notice02 {position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    display: none;}
 
 
 /* sns */
@@ -514,13 +597,27 @@ margin: 0 30px;
 overflow: hidden;
 }
 
-.sns .list{padding-bottom: 50px;}
+.sns .list{padding-bottom: 50px;
+    width: calc(332*8);
+    height: 400px;
+    position: relative;}
 .sns .list ul{width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 30px;}
+    padding-top: 30px;
+    position: absolute;
+    left: 0;
+    animation: sns 30s linear infinite;}
 
-.sns .list ul li{margin-right: 45px;}
+    @keyframes sns {
+
+        0% {left: 0px}
+        50% {left: -500px}
+        100% {left: 500px}
+        
+    }
+
+.sns .list ul li{margin-right: 30px;}
 .sns .list ul li img{width: 300px; height: 300px;
     border: 1px solid #000;}
     
@@ -603,11 +700,53 @@ margin-top: 30px;}
 .reservation form{margin-left: 40px;}
 
 
-.reservation .cal {width: 450px; height: 350px;
+.reservation .cal {width: 450px;
     background-color: #fff;
     margin-top: 50px;
     overflow: hidden;}
-.reservation .cal>img{transform: translateY(10px) translateX(-15px);}
+
+    .cal>p{margin-left: 20px;}
+
+        /* 달력 만지는곳 */
+    .cal #datepicker{width: 100%;
+        height: 300px;}
+
+    .hasDatepicker{display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;}
+    .ui-widget-header{font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: #2877E5;}
+
+    .ui-datepicker-prev{font-size: 16px;
+        position: absolute;
+        left:  50px;
+        top: 15px;}
+    .ui-datepicker-next{font-size: 16px;
+        position: absolute;
+        right: 50px;
+        top: 15px;}
+        .ui-datepicker-title{width: 100%;
+    height: 30px;}
+    .ui-datepicker-calendar th {width: 40px;
+        height: 40px;
+        font-size: 25px;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 2px solid #000;}
+    .ui-datepicker-calendar td {width: 30px;
+        height: 30px;
+        font-size: 16px;
+        text-align: center;}
+
+        .ui-datepicker-current-day{background-color: #093888;}
+        .ui-state-active{
+            font-weight: bold;
+            color: #fff;}
+
+        /*  */
 
 .reservation .text{
     color: #000;
@@ -690,7 +829,7 @@ color: #26A0D5;}
 .reservation .btn{width: 500px; height: 50px;
 margin-top: 20px;
 text-align: end;}
-.reservation .btn a{
+.reservation .btn p{
 display: inline-block;
 padding: 2px 35px;
 text-align: center;
@@ -702,12 +841,78 @@ font-size: 20px;
 background-color: rgba(255, 255, 255, 0.2);
 margin-right: 48px;}
 
-.reservation .btn a:hover{
+.reservation .btn p:hover{
     border: 1px solid #fff;
     border-radius: 5px;
     color: #fff;
     background-color: #01AAD7;
     margin-right: 48px;}
+
+.reserok{width: 250px;
+    height: 150px;
+    border-radius: 50px;
+    background-color: rgba(1,170,215, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;}
+
+    .reserok.on{display: block;}
+
+    .reserok>div{position: relative;
+    width: 100%;
+    height: 100%;}
+
+    .reserok p:nth-child(1){width: 100%;
+        font-size: 18px;
+        color: #101E36;
+        font-weight: bold;
+        text-align: center;
+        line-height:2;
+        position: absolute;
+        top: 40px;
+    }
+    .reserok p:nth-child(1)>span{
+        font-size: 16px;
+        color: #101E36;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+    .reserok p:nth-child(2){
+        font-size: 18px;
+        color: #101E36;
+        font-weight: normal;
+        text-align: center;
+        letter-spacing: 5px;
+        width: 100px;
+        height: 25px;
+        background-color: rgba(1,170,215, 0.5);
+        border-radius: 50px;
+        position: absolute;
+        top: 105%;
+        left: 70px;
+    }
+    .reserok p:nth-child(2):hover{
+        color: #21C0EA;
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    /* footer 설정*/
+
+.footer{width: 100%;
+    height: 100px;
+    background-color: #21C0EA;}
+
+.footer .copyrigth{color: #e9e9e9;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;}
+    
 
 
 
@@ -715,7 +920,747 @@ margin-right: 48px;}
 
 /* 태블릭 834px이하 */
 @media (max-width:834px) and (min-width:403px)
-{}
+{
+
+    /* 헤더 */
+    .header {width: 100%;
+        height: 100vh;
+        background-image: url(img/landing.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: -200px;
+        display: flex;
+        flex-direction: column;
+        position: relative;}
+
+    .header .navi .navi_1{width: 100%;
+        justify-content: space-between;
+        padding-top: 10px;}
+    
+    .header .navi .navi_1>li:last-child{margin-right: 10px;}
+    .header .navi .navi_1>li>a{display: block; padding: 5px 10px;
+        margin:5px auto;
+        color: #424242;
+        font-size: 16px;}   
+    
+    
+    .header .icon {width: 20px;}
+    
+    .header .text {position: absolute;
+    left: 20%;}
+
+        /* 프로그램 */
+
+        .program {width: 100%;
+            height: 810px;
+            display: flex;}
+        
+        .program .titleBox{width:360px;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;}
+        .program .titleBox p{
+            font-size: 16px;
+            color: #000;
+            text-align: right;}
+        
+        .program .titleBox p:nth-child(2){
+                margin-top: 300px;
+                margin-left: 200px;
+                font-size: 14px;
+                color: #525252;
+                text-align: left;}
+        
+        .program .titleBox span{
+            font-size: 16px;}
+        .program .titleBox em{
+            font-size: 30px;}
+        
+        .program .listBox{width: 480px;
+            height: 100%;
+            overflow: hidden;}
+        .program .listBox ul{width:480px;
+            height: 810px;
+            display: block;
+            position: relative;}
+        .program .listBox li {width: 100%;
+            height: 810px;
+            position:absolute;
+            overflow: hidden;}
+
+            .program .listBox li:nth-child(1){left: 0;}
+            .program .listBox li:nth-child(2){left: 100%;}
+            .program .listBox li:nth-child(3){left: 100%;}
+        
+        .program .listBox li:hover {width: 100%;}
+
+        /* 업체소개 */
+
+        .intro {width: 100%;
+            height: 100vh;
+            background-image: url(img/aquariumbg1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;}
+            
+            .intro .intro_logo{margin-top: -20px;
+                margin-bottom: 20px;}
+                .intro .intro_logo img{width: 60px; height: 60px;}
+            
+            .intro .intro_inner .info{
+                width: 800px;
+                margin: 0 auto;
+                padding-top: 25px;
+                padding-bottom: 35px;}
+            .intro .intro_inner .info h2{font-size: 30px;}
+            .intro .intro_inner .info .p1{font-size: 18px;}
+            .intro .intro_inner .info .p2{font-size: 28px;}
+            .intro .intro_inner .info .p3{font-size: 18px;}
+            
+            .intro_inner .floor ul{width: 700px;
+                                    margin: 0 auto;
+                                    display: flex;
+                                    justify-content: space-between;}
+
+            .intro_inner .floor ul li
+            .intro_inner .floor ul li p{font-size: 20px;}
+            .intro_inner .floor ul li em{font-size: 18px;
+                                        font-style: normal;}
+
+                        .f1 {font-size: 20px;}
+            
+            .floor .f_bg{margin-top: 30px;
+                position: relative;
+                width: 130px;
+                height: 100px;}
+
+                .f_bg img{width: 100%;}
+            .floor .f_bg .f_text{position: absolute;
+                left: 15px;
+                top: 15px;
+                width: 60px;
+                height: 60px;
+                color: #fff;}
+
+/* 갤러리 */
+
+.group .photoG{width: 100%;
+    height: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    overflow: hidden;}
+.group .photoG ul{width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;}
+    .group .photoG ul:nth-child(1){left: 0;
+        animation: leftslide 50s linear infinite ;}
+    .group .photoG ul:nth-child(2){left: 100%;
+        animation: leftslide2 50s linear infinite;}
+
+    @keyframes leftslide {
+
+        0% {left: 0;}
+        50% {left: -100%;}
+        50.0001% {left: 100%;}
+        100% {left: 0%;}
+        
+    }
+    @keyframes leftslide2 {
+
+        0% {left: 100%;}
+        50% {left: 0%;}
+        100% {left: -100%;}
+        
+    }
+
+.group .photoG ul>li{width: 350px;
+    margin: 0 20px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px rgb(49, 49, 49);
+    cursor: pointer;
+    perspective: 800px;}
+.group .photoG ul img{width:auto; height: 450px;} 
+.group .photoG ul li:nth-child(odd){margin-top: 150px;}
+.photoG ul>li:hover img{transform: translateZ(50px);
+transition: all 1s;} 
+
+
+/* 동물 소개 */
+
+.group .animal .title div:nth-child(1){width: 30%;
+    height: 1px;}
+.group .animal .title div:nth-child(3){width: 30%;
+    height: 1px;}
+.group .animal .title div:nth-child(2){width: 40%;
+    font-size: 25px;
+    text-align: center;}
+.animal .title div:nth-child(2) p{margin-right: 15px;}
+.animal .title div:nth-child(2) span{font-size: 18px;}
+.animal .title div:nth-child(2) em{font-size: 40px;}
+
+
+.group .animal .list ul li .img{width: 530px; height: 190px;
+    position: absolute;
+    left: 110px;}
+.group .animal .list ul li{height: 450px;}
+
+.animal .list .list01{width: 750px;
+    height: auto;
+    position: relative;}
+.animal .list .list01 img{width: 120%;}
+.animal .list .list01 .text{width: 530px;
+    position: absolute;
+    left: 110px;
+    top: 210px;}
+.list01 .text p:nth-child(1){text-align: left;
+    font-size: 28px;
+    margin-top: 60px;
+    text-shadow: 0px 0px 6px rgb(231, 231, 162);}
+.list01 .text p:nth-child(3){text-align: left;
+    margin-top: 10px;}
+
+    .list01:hover>.img{box-shadow: 0px 0px 50px rgba(231, 231, 162, 0.6);
+        box-sizing: border-box;}
+
+
+        /* 이벤트, 공지사항, 문답 */
+
+        .eventBox{width: 100%;
+            height: 950px;}
+        .eventBox .eventBox-1{width: 80%;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 50px;
+            display: flex;
+            flex-direction: column;}
+
+        .eventBox .event{width: 100%; height: auto;}
+        .eventBox .borad{width: 100%; height: auto;
+            margin-top: 50px;}
+
+/* 영업시간 */
+
+.clock{width: 100%;
+    height: 280px;
+    background-attachment:local;}
+
+
+/* 예약하기 / 맵 */
+.mapBox{width: 100%;
+    height: 1500px;}
+    
+    .map{width: 100%; height: 600px;
+        position: absolute;
+        top: 900px;}
+    .map>iframe{width: 100%; height: 100%;}
+
+    .reservation {width: 100%; height: 900px;
+        background-color: transparent;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left:0;
+        top: 0;}
+    
+    .reservation form{margin-left: 0px;}
+
+    .reserok{
+        border: 3px solid #0E2449;
+        background-color: rgba(1,170,215, 0.8);
+        position: absolute;
+        top: 500px;
+        left: 300px;
+        z-index: 999;}
+
+        .reserok p:nth-child(2){
+            background-color: rgba(1,170,215, 0.8);
+            border: 3px solid #0E2449;
+            border-radius: 50px;
+        }
+        .reserok p:nth-child(2):hover{
+            color: #21C0EA;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+
+
+
+
+
+}
 /* 모바일 402px 이하 */
 @media (max-width:402px)
-{}
+{
+
+    /* 프로그램 */
+
+    .program {width: 100%;
+        height: 970px;
+        display: flex;
+        flex-direction: column;}
+    
+    .program .titleBox{width: 100%;
+        height: 160px;
+        background-color: #fff;}
+    .program .titleBox p{
+        font-size: 16px;
+        color: #000;
+        text-align: right;
+        margin-top: 25px;
+        margin-right: 30px;}
+    
+    .program .titleBox p:nth-child(2){
+        display: none;
+    }
+    
+    .program .titleBox span{
+        font-size: 16px;}
+    .program .titleBox em{
+        font-size: 30px;}
+    
+    .program .listBox{width: 100%;
+        height: 810px;
+        overflow: hidden;}
+    .program .listBox ul{width:100%;
+        height: 810px;
+        display: block;
+        position: relative;}
+    .program .listBox li {width: 100%;
+        height: 810px;
+        position:absolute;}
+
+        .program .listBox li:nth-child(3) img{width: auto; height: 100%;
+            transform: translateX(-300px);}
+        
+        .program .listBox li:hover{width: 100%;}
+
+    .program .listBox .text{width: 100%;
+        height: 200px;
+        bottom: 0px;}
+    .program .listBox li:hover .text{height: 200px;
+        bottom: 0px;}
+    
+        .program .listBox .text p{
+        margin-top: 30px;
+        font-size: 20px;
+        text-align: center;}
+        .program .listBox .text .btn a{
+            padding: 5px 10px;
+            font-size: 22px;}
+
+/* 업체소개 */
+
+.intro {width: 100%;
+    height: 810px;
+    background-image: url(img/aquariumbg1.jpg);
+    background-position:center;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;}
+    
+    .intro .intro_logo{margin-top: 60px;
+        margin-bottom: 60px;}
+        .intro .intro_logo img{width: 60px; height: 60px;}
+    
+        .intro .intro_inner{width: 100%;}
+    .intro .intro_inner .info{
+        width: 96%;
+        margin: 50px auto;
+        padding-top: 25px;
+        padding-bottom: 35px;}
+    .intro .intro_inner .info h2{font-size: 25px;}
+    .intro .intro_inner .info .p1{font-size: 14px;}
+    .intro .intro_inner .info .p2{font-size:18px;}
+    .intro .intro_inner .info .p3{font-size: 14px;}
+    
+    .intro_inner .floor ul{width: 80%;
+                            margin: 30px auto;
+                            display: flex;
+                            justify-content: space-between;}
+
+    .intro_inner .floor ul li
+    .intro_inner .floor ul li p{font-size: 20px;}
+    .intro_inner .floor ul li em{font-size: 18px;
+                                font-style: normal;}
+
+                .f1 {font-size: 20px;}
+    
+    .floor .f_bg{margin-top: 30px;
+        position: relative;
+        width: 60px;
+        height: 50px;}
+
+        .f_bg img{width: 100%;}
+    .floor .f_bg .f_text{position: absolute;
+        left: 0px;
+        top: 5px;
+        width: 40px;
+        height: 30px;
+        color: #fff;}
+
+        .intro_inner .floor ul li p {font-size: 14px;}
+        .intro_inner .floor ul li em {font-size: 8px;}
+
+        /* 갤러리 */
+
+        .group .photoG{width: 100%;
+            height: 600px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: relative;
+            overflow: hidden;}
+        .group .photoG ul{width:100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;}
+            .group .photoG ul:nth-child(1){left: 0;
+                animation: none}
+            .group .photoG ul:nth-child(2){display: none;}
+        
+        
+        .group .photoG ul>li{width: 300px;
+            margin: 0 10px;
+            height: 450px;
+            overflow: hidden;
+            box-shadow: 2px 2px 2px rgb(49, 49, 49);
+            cursor: pointer;
+            perspective: 800px;
+            position: absolute;
+            margin-left: 30px;}
+
+            .group .photoG ul>li:nth-child(1){left: 0;}
+            .group .photoG ul>li:nth-child(2){left: 100%;}
+            .group .photoG ul>li:nth-child(3){left: 100%;}
+            .group .photoG ul>li:nth-child(4){left: 100%;}
+        .group .photoG ul img{width:auto; height: 100%;} 
+        .group .photoG ul li:nth-child(odd){margin-top: 0px;}
+        .photoG ul>li:hover img{transform: translateZ(50px);
+        transition: all 1s;} 
+
+
+    /* 동물 현황 */
+    .group .animalInfo {width: 100%; height: auto;
+        margin-top: 50px;
+        margin-bottom: 150px;
+    }
+
+        .animalInfo .title div:nth-child(1){display: none;}
+        .animalInfo .title div:nth-child(3){display: none;}
+        .animalInfo .title div:nth-child(2){width: 100%;
+            font-size: 20px;}
+        
+        .animalInfo .title div em{font-style: normal;
+            font-size: 30px;}
+
+        .group .animalInfo .text{width: 90%;
+            margin: 0 auto;}
+        .group .animalInfo .text p{text-align: center; margin-top: 100px;
+            color: #fff;
+            font-size: 25px;
+            font-family: "Song Myung", serif;
+            text-shadow: 0px 0px 6px rgb(231, 231, 162);}
+        .group .animalInfo .text p:nth-child(2){margin-top: 30px;
+            font-size: 20px;
+            font-family: "Song Myung", serif;}
+
+            .group .animal {width: 100%;
+    padding-bottom: 50px;}
+.group .animal .title{
+    width: 100%;    
+    display: flex;
+    align-items: center;}
+.group .animal .title div{background-color: #fff;}
+.group .animal .title div:nth-child(1){width: 62%; height: 1px;}
+.group .animal .title div:nth-child(3){width: 18%; height: 1px;}
+.group .animal .title div:nth-child(2){width: 20%;
+    background-color: transparent;
+    font-size: 28px;
+    font-family: "Song Myung", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    text-align: right;
+    text-shadow: 0px 0px 6px rgb(231, 231, 162);}
+.animal .title div:nth-child(2) p{margin-right: 15px;}
+.animal .title div:nth-child(2) span{display: inline-block;
+        padding: 0 3px;
+        border-right: 4px solid #b3b3b3;
+        margin-right: 2px;
+        font-size: 28px;
+        font-family: "Nanum Gothic", serif;
+        font-weight: 400;
+        font-style: normal;        
+        color: #b3b3b3;}
+.animal .title div:nth-child(2) em{font-style: normal;
+        font-weight: bold;
+        font-size: 45px;
+        color: #01AAD7;}
+
+        /* 동물소개 */
+
+        .group .animal{width: 100%;
+            height: 650px;}
+        .group .animal .title{width: 90%;
+            margin: 0 auto;}
+        .group .animal .title div:nth-child(1){display: none;}
+        .group .animal .title div:nth-child(3){display: none;}
+        .group .animal .title div:nth-child(2){width: 100%;
+            font-size: 25px;}
+        .animal .title div:nth-child(2) p{margin-right: 15px;}
+        .animal .title div:nth-child(2) span{font-size: 25px;}
+        .animal .title div:nth-child(2) em{font-size: 40px;}
+
+        .group .animal .list ul{display: block;
+            position: relative;
+            width: 100%;
+            height: 450px;}
+        
+        .group .animal .list ul li{width: 100%;
+            height: 450px;
+            position: absolute;
+            left: 0;}
+            .group .animal .list ul li:nth-child(2){left: 100%;}
+
+        
+        
+        
+        .animal .list .list01{width: 100%;
+            height: 100%;
+            padding-top: 0;
+            display: flex;
+        flex-direction: column;}
+        .animal .list .list01>div{width: 100%;}
+        .group .animal .list ul li .img{width: 100%; height: 200px;
+            position: sticky;
+            top: 0;
+            left: 0px;
+            order: 0;}
+        .animal .list .list01 img{width: 150%;}
+        .animal .list .list01 .text{width: 530px;
+            position:sticky;
+            left: 0px;
+            top: 0px;
+            order: 1;}
+        .list01 .text p:nth-child(1){width: 30%;
+            text-align: left;
+            font-size: 25px;
+            margin-top: 10px;
+            text-shadow: 0px 0px 6px rgb(231, 231, 162);}
+            .list01 .text p:nth-child(2){width: 70%;
+                text-align: center;
+                font-size: 16px;
+                margin-top: 12px;}
+        .list01 .text p:nth-child(3){text-align: left;
+            margin-top: 10px;}
+        
+            .list01:hover>.img{box-shadow: 0px 0px 50px rgba(231, 231, 162, 0.6);
+                box-sizing: border-box;}
+
+
+    /* 이벤트, 공지사항, 문답 */
+
+    .eventBox{width: 100%;
+        height: 800px;}
+    .eventBox .eventBox-1{width: 100%;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;}
+
+    .eventBox .event .title{width: 100%;}
+        .eventBox .event .title h2{margin-left: 30px;
+                                    font-size: 30px;}
+        .eventBox .event .title p{margin-right: 20px;
+                            font-size: 30px;}
+
+    .eventBox .event{width: 100%; height: auto;
+        margin-top: 20px;}
+    .eventBox .borad{width: 100%; height: auto;
+        margin-top: 50px;}
+
+    .eventBox .event .list ul .event01 {width:98%;}    
+    .eventBox .event .list ul .event01 .text{
+        height: 80px;
+        font-size: 16px;}
+    .eventBox .event .list ul .event01 div span{font-size: 14px;}
+    .eventBox .event .list ul .event01 div p{margin-top: -10px;}
+    .eventBox .event .list ul .event01 div p:nth-child(2){
+        color: #606060;
+        font-size: 10px;
+        position: absolute;
+        right: 10px;
+        bottom: 5px;}
+
+
+        .eventBox .borad .title{width: 100%;}
+        .eventBox .borad .title i{font-size: 30px;}
+        .eventBox .borad .title ul li{ margin: 0px;
+            padding:0px;
+            margin-left: 30px;
+            font-size: 30px;
+            color: #093888;
+            cursor: pointer;
+            font-family: "Nanum Gothic", serif;
+            font-weight: bold;}
+        .eventBox .borad .title ul li:nth-child(2){font-size: 28px;
+                color: #606060;
+                cursor: pointer;
+                font-family: "Nanum Gothic", serif;
+                font-weight: bold;}
+        
+        
+        .borad .conBox{width: 100%;
+            position: relative;}
+            .notbox{width: 90%;
+                height: auto;
+                margin: 0 auto;
+            position: relative;}
+        .borad .conBox>div ul{width: 100%;
+            margin: 30px auto;}
+        .borad .conBox>div li{width: 100%;
+            margin: 15px 0;
+            padding-bottom: 10px;
+            border-bottom:  1px dotted #666;}
+        .borad .conBox>div li a{font-size: 14px;
+                font-family: "Nanum Gothic", serif;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                text-align: left;}
+        .borad .conBox .notice li:last-child{border-bottom:  1px solid #000;}
+        .borad .conBox>div li:first-child{margin-top: 10px; }
+        
+        .notice {position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            display:block}
+        
+        .notice02 {position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+            display: none;}
+
+/* sns */
+
+    .sns{width: 100%;
+    }
+    .sns .title{width: 100%;
+        margin: 0;
+        display: flex;
+        border-bottom: 1px solid #606060;
+        padding-bottom: 5px;
+    }
+    .sns .title h2{width: 95%; 
+        font-size: 30px;
+        color: #093888;
+        font-family: "Nanum Gothic", serif;
+        font-weight: bold;
+        margin-left: 30px;}
+    .sns .title ul{width: auto;
+        display: flex;}
+    .sns .title ul li{width: 30px;
+        height: 30px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        margin: 0 10px;
+        overflow: hidden;
+    }
+    .sns .title ul li>img{width: 150%}
+
+    .sns .list{padding-bottom: 50px;
+        width: calc(332*8);
+        height: 400px;
+        position: relative;}
+    .sns .list ul{width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        position: absolute;
+        left: 0;
+        animation: sns 30s linear infinite;}
+
+    @keyframes sns {
+
+        0% {left: 0px}
+        50% {left: -500px}
+        100% {left: 500px}
+        
+    }
+
+    .sns .list ul li{margin-right: 30px;}
+    .sns .list ul li img{width: 300px; height: 300px;
+        border: 1px solid #000;}
+    
+
+    .sns .list ul li span{font-size: 14px;
+        color: #787878;
+        font-weight: normal;}
+    .sns .list ul li p{ margin-top: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #000;}
+
+/* 영업시간 */
+
+.clock{width: 100%;
+height: 280px;
+    background-attachment: local;}
+
+
+/* 예약하기 / 맵 */
+.mapBox{width: 100%;
+height: 1500px;}
+
+.map{width: 100%; height: 600px;
+    position: absolute;
+    top: 900px;}
+.map>iframe{width: 100%; height: 100%;}
+
+.reservation {width: 100%; height: 900px;
+    background-color: transparent;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left:0;
+    top: 0;}
+
+.reservation form{margin-left: 0px;}
+
+.reserok{
+    border: 3px solid #0E2449;
+    background-color: rgba(1,170,215, 0.8);
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    z-index: 999;}
+
+    .reserok p:nth-child(2){
+        background-color: rgba(1,170,215, 0.8);
+        border: 3px solid #0E2449;
+        border-radius: 50px;
+    }
+    .reserok p:nth-child(2):hover{
+        color: #21C0EA;
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+}
