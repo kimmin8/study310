@@ -63,23 +63,40 @@ $(document).ready(function(){
                 p = next;
             }
             }, 5000);
-          
-    const galley = $('.photoG li').length;
+
+            let g = 0
     setInterval(function(){        
         if(window.matchMedia('(max-width: 843px)').matches) {
-            let next = (p + 1) % galley;
+            
+            g++
+            if(g == 4) g = 0;
+            
 
-                
-                $('.photoG li').eq(p)
+            $('.photoG li').eq(g-1)
                 .css({ 'left': '0' }).stop().animate({ 'left': '-100%' }, 1200);
-
                 
-                $('.photoG li').eq(next)
+            $('.photoG li').eq(g)
                 .css({ 'left': '100%' }).stop().animate({ 'left': '0' }, 1200);
 
-                p = next;
             }
             }, 3600);
+
+            // 동물
+
+            let a = 0;
+
+            setInterval(function(){
+                if(window.matchMedia('(max-width: 402px)').matches) {
+                a++;
+            
+                if (a == 2) a = 0
+            
+                $('.list li').eq(a-1).css({'left':'0'}).stop().animate({'left':'-100%'},1500)
+                $('.list li').eq(a).css({'left':'100%'}).stop().animate({'left':'0'},1500)
+            
+                }
+            },6000)
+        
     
 
 
@@ -170,4 +187,21 @@ $(document).ready(function(){
         $('.notice02').css({'display':'block'})
         $('.notice').css({'display':'none'})
     })
+
+    // 모바일 페이지
+    let mbtn = 0;
+        $('.mbtn').click(function(){        
+            mbtn++
+            if(mbtn>=2) mbtn=0;
+            if(mbtn==1){
+            $(this).addClass('on')
+            $('.Mnav').addClass('on')
+
+                }else if(mbtn==0){
+                    
+                    $(this).removeClass('on')
+                    $('.Mnav').removeClass('on')
+    
+                }
+        })
 })

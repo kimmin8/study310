@@ -95,6 +95,9 @@ font-style: normal;}
 color: #fff;
 margin-left: 35px;}
 
+/* 모바일 메뉴 숨기기 */
+.Mheader,.mbtn,.Mnav{display: none;}
+
 
 /* 체험프로그램 */
 .program {width: 100%;
@@ -133,7 +136,7 @@ margin-left: 35px;}
 
 .program .listBox{width: 70%;
     height: 100%;
-    background-color: burlywood;}
+    background-color: #093888;}
 .program .listBox ul{display: flex;}
 .program .listBox li {width: 33.3333%;
     height: 810px;
@@ -167,6 +170,7 @@ margin-left: 35px;}
         margin-top: 30px;
         font-family: "Gowun Dodum", serif;
     }
+    .program .listBox .text .btn a:hover{background-color: rgba(0, 0, 0, 0.1);}
 
 .program .listBox li:hover {width: 60%; height: 810px;}
 .program .listBox li:hover .text{width: 100%; height: 270px;
@@ -601,7 +605,7 @@ overflow: hidden;
     width: calc(332*8);
     height: 400px;
     position: relative;}
-.sns .list ul{width: 100%;
+.sns .list>ul{width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 30px;
@@ -848,13 +852,14 @@ margin-right: 48px;}
     background-color: #01AAD7;
     margin-right: 48px;}
 
-.reserok{width: 250px;
+.reserok{width: 300px;
     height: 150px;
-    border-radius: 50px;
+    border-radius: 0px;
     background-color: rgba(1,170,215, 0.5);
+    border: 1px solid #fff;
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -890,10 +895,12 @@ margin-right: 48px;}
         width: 100px;
         height: 25px;
         background-color: rgba(1,170,215, 0.5);
-        border-radius: 50px;
+        border: 1px solid #fff;
+        border-radius: 0px;
         position: absolute;
-        top: 105%;
-        left: 70px;
+        top: 110%;
+        left: 50%;
+        margin-left: -50px;
     }
     .reserok p:nth-child(2):hover{
         color: #21C0EA;
@@ -922,16 +929,32 @@ margin-right: 48px;}
 @media (max-width:834px) and (min-width:403px)
 {
 
+
+    .Mheader,.mbtn,.Mnav{display: none;}
     /* 헤더 */
     .header {width: 100%;
         height: 100vh;
         background-image: url(img/landing.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position-x: -200px;
         display: flex;
         flex-direction: column;
         position: relative;}
+
+        .header .text {position: absolute;
+            left: 50%;
+            top: 30%;
+            font-size: 20px;
+            color: #2877E5;
+            font-family: "Nanum Pen Script", serif;
+            font-weight: 400;
+            font-style: normal;
+            margin-left: 60px;}
+            
+            .header .text span{font-size: 25px;
+            color: #fff;
+            margin-left: 35px;}
+            
 
     .header .navi .navi_1{width: 100%;
         justify-content: space-between;
@@ -1031,8 +1054,6 @@ margin-right: 48px;}
             .intro_inner .floor ul li p{font-size: 20px;}
             .intro_inner .floor ul li em{font-size: 18px;
                                         font-style: normal;}
-
-                        .f1 {font-size: 20px;}
             
             .floor .f_bg{margin-top: 30px;
                 position: relative;
@@ -1046,6 +1067,8 @@ margin-right: 48px;}
                 width: 60px;
                 height: 60px;
                 color: #fff;}
+                .floor .f_bg .f_text>p{font-size: 20px;}
+                .floor .f_bg .f_text>em{font-size: 14px;}
 
 /* 갤러리 */
 
@@ -1176,17 +1199,18 @@ transition: all 1s;}
     .reservation form{margin-left: 0px;}
 
     .reserok{
-        border: 3px solid #0E2449;
+        border: 1px solid #0E2449;
         background-color: rgba(1,170,215, 0.8);
         position: absolute;
         top: 500px;
         left: 300px;
+        border-radius: 0px;
         z-index: 999;}
 
         .reserok p:nth-child(2){
             background-color: rgba(1,170,215, 0.8);
-            border: 3px solid #0E2449;
-            border-radius: 50px;
+            border: 1px solid #0E2449;
+            border-radius: 0px;
         }
         .reserok p:nth-child(2):hover{
             color: #21C0EA;
@@ -1203,7 +1227,104 @@ transition: all 1s;}
 @media (max-width:402px)
 {
 
+
+    body{overflow-x:hidden;}
     /* 프로그램 */
+
+    .header {display: none;}
+    .Mheader {width: 100%;
+            height: 800px;
+            background-image: url(img/m_landing_bg.jpg);
+            background-size: cover;
+            position: relative;
+            display: block;}
+
+            .Mheader>p{position: absolute;
+                top: 280px;
+                left: 0;}
+            .Mheader>h2{position: absolute;
+                top: 320px;
+                left: 30px;}
+            .Mheader>.text{position: absolute;
+                top: 285px;
+                left: 80px;
+                font-size: 16px;}
+
+                
+            .Mheader>.text>p{color: #2877E5;
+                font-family: "Nanum Pen Script", serif;
+                font-weight: 400;
+                font-style: normal;}
+
+            .Mheader>.text>p>span{color:#fff;}
+
+            
+    .mbtn{position: fixed;
+        top: 8px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 9999;}
+        .mbtn span{width: 30px;
+            height: 3px;
+            background-color: #fff;
+            display: inline-block;
+            margin: 3px 0;
+            border-radius: 10px;
+            opacity: 0.8;}
+
+            .mbtn.on span:nth-child(1){transform-origin: left center;
+                transform: rotate(38deg);
+                background-color: #093888;
+                opacity: 1;}
+            .mbtn.on span:nth-child(2){opacity: 0;}
+            .mbtn.on span:nth-child(3){transform-origin: left center;
+                transform: rotate(-38deg);
+                background-color: #093888;
+                opacity: 1;}
+
+    .Mnav{width: 200px;
+        background-color: #FFF;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        transition: all 1.2s;
+        z-index: 999;
+        display: block;}
+
+        .Mnav.on{right: 0;}
+        .Mnav>ul{width: 90%;
+            height: auto;
+            margin: 20px auto;
+            margin-top: 35px;}
+            .Mnav>ul>li{font-size: 16px;
+                font-weight: bold;
+                margin: 8px 0;
+                color:#424242}
+                .Mnav>ul>li li{font-size: 12px;
+                    font-weight: normal;
+                    margin: 5px 0;
+                    margin-left: 5px;
+                    border-bottom: 1px solid transparent;
+                    box-sizing: border-box;
+                    transition: all 1s;}
+
+                    .Mnav>ul>li li:hover {border-bottom: 1px solid #01AAD7;
+                        box-sizing: border-box;}
+
+        .Mnav>p{width: 100%;
+            height: 60px;
+            background-color: #093888;
+            font-size: 16px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 0px;}
+            .Mnav>p>span{
+                font-size: 14px;
+                font-weight: normal;}
 
     .program {width: 100%;
         height: 970px;
@@ -1246,18 +1367,19 @@ transition: all 1s;}
         .program .listBox li:hover{width: 100%;}
 
     .program .listBox .text{width: 100%;
-        height: 200px;
+        height: 170px;
         bottom: 0px;}
-    .program .listBox li:hover .text{height: 200px;
+    .program .listBox li:hover .text{height: 170px;
         bottom: 0px;}
     
         .program .listBox .text p{
         margin-top: 30px;
-        font-size: 20px;
+        font-size: 16px;
+            letter-spacing: 3px;
         text-align: center;}
         .program .listBox .text .btn a{
             padding: 5px 10px;
-            font-size: 22px;}
+            font-size: 18px;}
 
 /* 업체소개 */
 
@@ -1291,11 +1413,11 @@ transition: all 1s;}
                             justify-content: space-between;}
 
     .intro_inner .floor ul li
-    .intro_inner .floor ul li p{font-size: 20px;}
-    .intro_inner .floor ul li em{font-size: 18px;
+    .intro_inner .floor ul li p{font-size: 18px;}
+    .intro_inner .floor ul li em{font-size: 16px;
                                 font-style: normal;}
 
-                .f1 {font-size: 20px;}
+                .f1 {font-size: 18px;}
     
     .floor .f_bg{margin-top: 30px;
         position: relative;
@@ -1361,7 +1483,7 @@ transition: all 1s;}
         .animalInfo .title div:nth-child(1){display: none;}
         .animalInfo .title div:nth-child(3){display: none;}
         .animalInfo .title div:nth-child(2){width: 100%;
-            font-size: 20px;}
+            font-size: 18px;}
         
         .animalInfo .title div em{font-style: normal;
             font-size: 30px;}
@@ -1370,45 +1492,13 @@ transition: all 1s;}
             margin: 0 auto;}
         .group .animalInfo .text p{text-align: center; margin-top: 100px;
             color: #fff;
-            font-size: 25px;
+            font-size: 20px;
             font-family: "Song Myung", serif;
             text-shadow: 0px 0px 6px rgb(231, 231, 162);}
         .group .animalInfo .text p:nth-child(2){margin-top: 30px;
-            font-size: 20px;
+            font-size: 14px;
             font-family: "Song Myung", serif;}
 
-            .group .animal {width: 100%;
-    padding-bottom: 50px;}
-.group .animal .title{
-    width: 100%;    
-    display: flex;
-    align-items: center;}
-.group .animal .title div{background-color: #fff;}
-.group .animal .title div:nth-child(1){width: 62%; height: 1px;}
-.group .animal .title div:nth-child(3){width: 18%; height: 1px;}
-.group .animal .title div:nth-child(2){width: 20%;
-    background-color: transparent;
-    font-size: 28px;
-    font-family: "Song Myung", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #fff;
-    text-align: right;
-    text-shadow: 0px 0px 6px rgb(231, 231, 162);}
-.animal .title div:nth-child(2) p{margin-right: 15px;}
-.animal .title div:nth-child(2) span{display: inline-block;
-        padding: 0 3px;
-        border-right: 4px solid #b3b3b3;
-        margin-right: 2px;
-        font-size: 28px;
-        font-family: "Nanum Gothic", serif;
-        font-weight: 400;
-        font-style: normal;        
-        color: #b3b3b3;}
-.animal .title div:nth-child(2) em{font-style: normal;
-        font-weight: bold;
-        font-size: 45px;
-        color: #01AAD7;}
 
         /* 동물소개 */
 
@@ -1419,10 +1509,10 @@ transition: all 1s;}
         .group .animal .title div:nth-child(1){display: none;}
         .group .animal .title div:nth-child(3){display: none;}
         .group .animal .title div:nth-child(2){width: 100%;
-            font-size: 25px;}
-        .animal .title div:nth-child(2) p{margin-right: 15px;}
-        .animal .title div:nth-child(2) span{font-size: 25px;}
-        .animal .title div:nth-child(2) em{font-size: 40px;}
+            font-size: 16px;}
+        .animal .title div:nth-child(2) p{margin-right: 20px;}
+        .animal .title div:nth-child(2) span{font-size: 14px;}
+        .animal .title div:nth-child(2) em{font-size: 25px;}
 
         .group .animal .list ul{display: block;
             position: relative;
@@ -1430,10 +1520,18 @@ transition: all 1s;}
             height: 450px;}
         
         .group .animal .list ul li{width: 100%;
-            height: 450px;
+            height: 420px;
             position: absolute;
-            left: 0;}
+            left: 0;
+            margin-top: 20px;
+            margin-bottom: 0;}
             .group .animal .list ul li:nth-child(2){left: 100%;}
+
+            .group .animal .list>p{text-align: center;
+                color: #fff;
+                margin-top: 10px;
+                padding-bottom: 10px;
+                font-size: 20px;}
 
         
         
@@ -1442,7 +1540,8 @@ transition: all 1s;}
             height: 100%;
             padding-top: 0;
             display: flex;
-        flex-direction: column;}
+            flex-direction: column;
+            justify-content: left;}
         .animal .list .list01>div{width: 100%;}
         .group .animal .list ul li .img{width: 100%; height: 200px;
             position: sticky;
@@ -1454,15 +1553,16 @@ transition: all 1s;}
             position:sticky;
             left: 0px;
             top: 0px;
-            order: 1;}
+            order: 1;
+            margin-top: 30px;}
         .list01 .text p:nth-child(1){width: 30%;
             text-align: left;
-            font-size: 25px;
+            font-size: 20px;
             margin-top: 10px;
             text-shadow: 0px 0px 6px rgb(231, 231, 162);}
             .list01 .text p:nth-child(2){width: 70%;
                 text-align: center;
-                font-size: 16px;
+                font-size: 12px;
                 margin-top: 12px;}
         .list01 .text p:nth-child(3){text-align: left;
             margin-top: 10px;}
@@ -1483,9 +1583,9 @@ transition: all 1s;}
 
     .eventBox .event .title{width: 100%;}
         .eventBox .event .title h2{margin-left: 30px;
-                                    font-size: 30px;}
+                                    font-size: 20px;}
         .eventBox .event .title p{margin-right: 20px;
-                            font-size: 30px;}
+                            font-size: 20px;}
 
     .eventBox .event{width: 100%; height: auto;
         margin-top: 20px;}
@@ -1496,27 +1596,28 @@ transition: all 1s;}
     .eventBox .event .list ul .event01 .text{
         height: 80px;
         font-size: 16px;}
-    .eventBox .event .list ul .event01 div span{font-size: 14px;}
+    .eventBox .event .list ul .event01 div span{font-size: 12px;}
     .eventBox .event .list ul .event01 div p{margin-top: -10px;}
     .eventBox .event .list ul .event01 div p:nth-child(2){
         color: #606060;
-        font-size: 10px;
+        font-size: 8px;
         position: absolute;
         right: 10px;
         bottom: 5px;}
 
 
-        .eventBox .borad .title{width: 100%;}
-        .eventBox .borad .title i{font-size: 30px;}
+        .eventBox .borad .title{width: 100%;
+            align-items: center;}
+        .eventBox .borad .title i{font-size: 20px;}
         .eventBox .borad .title ul li{ margin: 0px;
             padding:0px;
             margin-left: 30px;
-            font-size: 30px;
+            font-size: 20px;
             color: #093888;
             cursor: pointer;
             font-family: "Nanum Gothic", serif;
             font-weight: bold;}
-        .eventBox .borad .title ul li:nth-child(2){font-size: 28px;
+        .eventBox .borad .title ul li:nth-child(2){font-size: 16px;
                 color: #606060;
                 cursor: pointer;
                 font-family: "Nanum Gothic", serif;
@@ -1535,7 +1636,7 @@ transition: all 1s;}
             margin: 15px 0;
             padding-bottom: 10px;
             border-bottom:  1px dotted #666;}
-        .borad .conBox>div li a{font-size: 14px;
+        .borad .conBox>div li a{font-size: 12px;
                 font-family: "Nanum Gothic", serif;
                 padding-bottom: 10px;
                 padding-left: 15px;
@@ -1569,7 +1670,7 @@ transition: all 1s;}
         padding-bottom: 5px;
     }
     .sns .title h2{width: 95%; 
-        font-size: 30px;
+        font-size: 20px;
         color: #093888;
         font-family: "Nanum Gothic", serif;
         font-weight: bold;
@@ -1585,9 +1686,9 @@ transition: all 1s;}
     }
     .sns .title ul li>img{width: 150%}
 
-    .sns .list{padding-bottom: 50px;
+    .sns .list{padding-bottom: 10px;
         width: calc(332*8);
-        height: 400px;
+        height: 320px;
         position: relative;}
     .sns .list ul{width: 100%;
         display: flex;
@@ -1604,17 +1705,16 @@ transition: all 1s;}
         100% {left: 500px}
         
     }
-
     .sns .list ul li{margin-right: 30px;}
-    .sns .list ul li img{width: 300px; height: 300px;
+    .sns .list ul li img{width: 200px; height: 200px;
         border: 1px solid #000;}
     
 
-    .sns .list ul li span{font-size: 14px;
+    .sns .list ul li span{font-size: 10px;
         color: #787878;
         font-weight: normal;}
     .sns .list ul li p{ margin-top: 3px;
-        font-size: 20px;
+        font-size: 12px;
         font-weight: bold;
         color: #000;}
 
@@ -1629,38 +1729,139 @@ height: 280px;
 .mapBox{width: 100%;
 height: 1500px;}
 
-.map{width: 100%; height: 600px;
+.map{width: 100%; height: 500px;
     position: absolute;
-    top: 900px;}
+    bottom: 0;
+    order: 2;}
 .map>iframe{width: 100%; height: 100%;}
 
-.reservation {width: 100%; height: 900px;
+.reservation {width: 100%; height: auto;
     background-color: transparent;
     border-radius: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     left:0;
-    top: 0;}
+    top: 0;
+    order: 1;}
 
-.reservation form{margin-left: 0px;}
+    .reservation .cal {width: 95%;
+        background-color: #fff;
+        margin: 0 auto;
+        margin-top: 50px;
+        overflow: hidden;}
+
+.reservation form{width: 100%;
+    margin-left: 0px;}
+
+.reservation .menu {width: 95%;
+    margin: 0 auto;}
+    .reservation .menu .menu_C {width: 100%;}
+    .reservation .menu .menu_C ul{width: 100%;} 
+        .reservation .menu .menu_C ul li{width:100%;
+        padding:8px 0 8px 0px;}
+
+    .reservation .opt {margin-top: 20px;
+        margin-bottom: 20px;}
+    .reservation .opt div{width: 95%;
+        margin: 0 auto;
+        padding-left: 0px;}
+
+        .reservation .reser{width: 95%;
+            margin: 0 auto;
+            height: auto;
+            background-color: #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .reservation .reser .reser01{width: 100%;
+            background-color: #ccc;
+            padding: 3px 0;
+            border: 5px solid transparent;
+            box-sizing: border-box;    
+            margin: 3px 0;}
+        .reservation .reser .reser01 li:nth-child(1){
+        font-size: 14px;}
+        .reservation .reser .reser01 li:nth-child(2)
+        { width: 4%; background-color: #bbb;
+            display: block;
+        padding: 3px 10px;
+        text-align: center;}
+        .reservation .reser .reser01 li:nth-child(3){width: 48%;
+        text-align: end;
+        margin-right: 10px;
+        font-size: 14px;}
+        
+        .reservation .reser .reser02{width: 100%;
+        text-align: end;
+        margin-top: 5px;
+        margin-right: 20px;
+        font-size: 16px;
+        color: #26A0D5;}
+        
+        .reservation .btn{width: 200px; height: 50px;
+        margin-top: 20px;
+        margin-left: 110px;
+        text-align: center;}
+        .reservation .btn p{
+        display: inline-block;
+        padding: 5px 35px;
+        text-align: center;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #fff;
+        font-size: 18px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin-right: 0px;}
+        
+        .reservation .btn p:hover{
+            border: 1px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #01AAD7;
+            margin-right: 48px;}
+
+        .reservation .text{
+            color: #000;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
 .reserok{
-    border: 3px solid #0E2449;
-    background-color: rgba(1,170,215, 0.8);
+    border: 1px solid #0E2449;
+    border-radius: 0;
+    background-color: rgba(27, 155, 214, 0.5);
     position: absolute;
-    top: 500px;
-    left: 300px;
+    top: 600px;
+    left: 70px;
     z-index: 999;}
 
     .reserok p:nth-child(2){
-        background-color: rgba(1,170,215, 0.8);
-        border: 3px solid #0E2449;
+        background-color: rgba(27, 155, 214, 0.5);;
+        border: 1px solid #0E2449;
         border-radius: 50px;
     }
     .reserok p:nth-child(2):hover{
         color: #21C0EA;
         background-color: rgba(255, 255, 255, 1);
     }
+
+.mapBox .maptext {position: absolute;
+    right: 30px;
+    bottom: 100px;}
+    .mapBox .maptext h3{font-size: 25px;
+        text-align: right;
+    margin-bottom: -25px;}
+    .mapBox .maptext p{text-align: right;
+    font-size: 12px;
+    margin-top: 30px;}
+    .mapBox .maptext span{font-size: 12px;}
 
 }
