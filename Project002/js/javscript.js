@@ -207,12 +207,20 @@ $('.util li').eq(0).click(function(e){
     $('.contents>div').removeClass('on')
     $('.gnb').removeClass('gnb_B')
     $('.contents').addClass('logon')
-    $('.contents>div').eq(2).addClass('on')
-    
+    $('.contents>div').eq(2).addClass('on')    
 
 })
 
-//장바구니
+$('.btn li').eq(1).click(function(){
+    
+    $('.contents>div').removeClass('on')
+    $('.gnb').removeClass('gnb_B')
+    $('.contents').addClass('logon')
+    $('.contents>div').eq(2).addClass('on')    
+
+})
+
+//장바구니 열기
 
 $('.util li').eq(1).click(function(e){
     e.preventDefault()
@@ -221,7 +229,7 @@ $('.util li').eq(1).click(function(e){
 
 })
 
-// 닫기
+// 장바구니 닫기
 $('.cartinner h2 em').click(function(){
 
     $('.cart').removeClass('on')  
@@ -229,63 +237,116 @@ $('.cartinner h2 em').click(function(){
 })
 
 
+// 장바구니
+const pie = {
+    '초코파이 情': 4860,
+    '초코파이 情 바나나': 4860,
+    '초코파이 情 딸기': 4860,
+    '초코파이 情 수박': 4860
+};
 
-//장바구니 카운트 올리기
+let cartCount = 0;
+let totalPrice = 0;
 
-let cart = 0;
-$('.sell .btn li').click(function(){
+$('.add-to-cart').click(function () {
+    const parent = $(this).closest('.sell');
+    const img = parent.find('.cc img').attr('src');
+    const name = parent.find('p b').text().trim();
+    const price = pie[name] || 0;
+    const count = 1;
 
-    let img = $(this).closest('.sell').find('.cc img').attr('src');
-    let txt = $(this).closest('.sell').find('a p b').text();
+    // 장바구니 UI 추가
+    $('.innerBox1 ul').append(`
+        <li>
+            <img src="${img}" alt="">
+            <div class="cartlist">
+                <div class="list1">
+                    <p>${name}</p>
+                    <div class="num">
+                        <span class="minus"> - </span>
+                        <span class="quantity">${count}</span>
+                        <span class="plus"> + </span>
+                    </div>
+                </div>
+                <p class="itemPrice">${price.toLocaleString()}원</p>
+            </div>
+            <span class="delete">삭제</span>
+        </li>
+    `);
 
-    cart ++
-    $('.util').find('.num').text(cart);
-    $('.cartcount>p').eq(1).find('span').text(cart);
-    
+    // 수량 및 총 금액 업데이트
+    cartCount += 1;
+    totalPrice += price;
 
-    //장바구니에 담기
-    $('<li><img src="'+img+'" alt=""><div class="cartlist"><div class="list1"><p>'+txt+'</p><div class="num"><span> - </span><span>00</span><span> + </span></div></div><p>가격</p></div><span>삭제</span></li>').appendTo('.innerBox1 ul')
-})
+    $('.util .num').text(cartCount);
+    $('.cartcount p span').text(cartCount);
+    $('.cartwon p span').text(totalPrice.toLocaleString());
+});
 
-$('.pro03 .pro03ho a').eq(1).click(function(e){
-    e.preventDefault() 
+// 장바구니 삭제
+$('.innerBox1').on('click', '.delete', function () {
+    const li = $(this).closest('li');
+    const priceText = li.find('.itemPrice').text().replace('원', '').replace(/,/g, '');
+    const count = parseInt(li.find('.quantity').text());
 
-    cart ++
-    $('.util').find('.num').text(cart);  
-    $('.cartcount>p').eq(1).find('span').text(cart);
+    totalPrice -= parseInt(priceText) * count;
+    cartCount -= count;
 
+    li.remove();
 
-    let proimg = $(this).closest('.pro03img').find('img').attr('src');
-    let protxt = $(this).closest('.pro03img').next().text();
+    $('.util .num').text(cartCount);
+    $('.cartcount p span').text(cartCount);
+    $('.cartwon p span').text(totalPrice.toLocaleString());
+});
 
-    //장바구니에 담기
-    $('<li><img src="'+proimg+'" alt=""><div class="cartlist"><div class="list1"><p>'+protxt+'</p><div class="num"><span> - </span><span>00</span><span> + </span></div></div><p>가격</p></div><span>삭제</span></li>').appendTo('.innerBox1 ul')
-})
-
-
-//장바구니 리스트 삭제
-
-$('.innerBox1').on('click', 'li>span', function(){
-    $(this).closest('li').remove()
-    
-    // 삭제시 카운트 내리기
-    let uncart = $('.innerBox1 ul li').length;
-    
-    $('.util').find('.num').text(uncart);  
-    $('.cartcount>p').eq(1).find('span').text(uncart);
-
-    cart --;
-    $('.util').find('.num').text(cart);
-    $('.cartcount>p').eq(1).find('span').text(cart);
-
-})
-
+// 상품 수량 증가
+$('.cart').on('click', '.plus', function () {
+    const li = $(this).closest('li');
+    const quantitySpan = li.find('.quantity');
+    let count = parseInt(quantitySpan.text());
+  
+    count++;
+    quantitySpan.text(count);
+  
+    const priceText = li.find('p').eq(1).text().replace(/[^0-9]/g, '');
+    const price = parseInt(priceText);
+  
+    cartCount++;
+    totalPrice += price;
+  
+    $('.util .num').text(cartCount);
+    $('.cartcount p span').text(cartCount);
+    $('.cartwon p span').text(totalPrice.toLocaleString());
+  });
+  
+  
+  // 상품 수량 삭제
+  $('.cart').on('click', '.minus', function () {
+    const li = $(this).closest('li');
+    const quantitySpan = li.find('.quantity');
+    let count = parseInt(quantitySpan.text());
+  
+    if (count > 1) {
+      count--;
+      quantitySpan.text(count);
+  
+      const priceText = li.find('p').eq(1).text().replace(/[^0-9]/g, '');
+      const price = parseInt(priceText);
+  
+      cartCount--;
+      totalPrice -= price;
+  
+      $('.util .num').text(cartCount);
+      $('.cartcount p span').text(cartCount);
+      $('.cartwon p span').text(totalPrice.toLocaleString());
+    }
+  });
 
 // 상세페이지 이미지 돌리기
 
 $('.proThumb li').click(function(){
     let thumb = $(this).index();
-    if(thumb == 5) thumb = 0; 
+    if(thumb == 4) thumb = 0; 
 
     $('.proBig img').eq(thumb-1).css({'left':'0'}).stop().animate({'left':'100%'},800)
     $('.proBig img').eq(thumb).css({'left':'-100%'}).stop().animate({'left':'0'},800)
@@ -299,7 +360,7 @@ let count = 0;
 $('.num span').eq(2).click(function(){
     count++
     $('.num span').eq(1).text(count)
-    $('.won span').text(4860 * count)
+    $('.won span').text((4860 * count).toLocaleString())
    
 })
 //  내리기
@@ -307,9 +368,47 @@ $('.num span').eq(0).click(function(){
     count--
     if(count <= -1) count = 0
     $('.num span').eq(1).text(count)
-    $('.won span').text(4860 * count)
+    $('.won span').text((4860 * count).toLocaleString())
    
 })
+
+//관련 상품 담기
+
+$('.addcart').click(function (e) {
+    e.preventDefault(); 
+
+    const parent = $(this).closest('li');
+    const img = parent.find('img').attr('src');
+    const name = parent.find('p').text().trim();
+    const price = pie[name] || 0;
+    const count = 1;
+
+    // 장바구니에 추가
+    $('.innerBox1 ul').append(`
+        <li>
+            <img src="${img}" alt="">
+            <div class="cartlist">
+                <div class="list1">
+                    <p>${name}</p>
+                    <div class="num">
+                        <span class="minus"> - </span>
+                        <span class="quantity">${count}</span>
+                        <span class="plus"> + </span>
+                    </div>
+                </div>
+                <p class="itemPrice">${price.toLocaleString()}원</p>
+            </div>
+            <span class="delete">삭제</span>
+        </li>
+    `);
+
+    cartCount += 1;
+    totalPrice += price;
+
+    $('.util .num').text(cartCount);
+    $('.cartcount p span').text(cartCount);
+    $('.cartwon p span').text(totalPrice.toLocaleString());
+});
 
 //메인 스크롤 클릭시 내려가기
 
