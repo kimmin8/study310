@@ -42,6 +42,7 @@ $(document).ready(function(){
 
         if(window.matchMedia('(max-width:430px')){
             $('.M_header').addClass('under')
+            $('.under').addClass('on')
         }
         
 
@@ -59,6 +60,17 @@ $(document).ready(function(){
         $('body').find('.ten').removeClass('ten')
 
         $(window).scrollTop(0)
+
+        if (window.matchMedia('(max-width: 430px)').matches) {
+                // 모바일: 흰색 아이콘
+                $('.M_header').addClass('off');
+                $('.tocart span').find('img').attr('src', 'img/cartX_W.png');
+            } else {
+                // PC: 기본 아이콘
+                $('.tocart span').find('img').attr('src', 'img/cartX.png');
+            }
+
+        
     })
 
     $('.tocart>h2 img').click(function(){
@@ -68,6 +80,10 @@ $(document).ready(function(){
 
         $('.main').addClass('on')
         $(window).scrollTop(0)
+
+        if(window.matchMedia('(max-width:430px')){
+            $('.M_header').removeClass('off')
+        }
     })
 
     // gnb
@@ -184,7 +200,14 @@ $(document).ready(function(){
 
     // 상품 정보 추출
     let name = $(this).closest('li').find('p').first().text()
-    let price = $(this).closest('li').find('em').eq(1).text()
+    let price;
+        if (window.matchMedia('(max-width: 430px)').matches) {
+            // 모바일일 때
+            price = $(this).closest('li').find('em').eq(0).text();
+        } else {
+            // PC일 때
+            price = $(this).closest('li').find('em').eq(1).text();
+        }
     let imgSrc = $(this).closest('li').find('img').eq(0).attr('src')
 
     // li 추가
